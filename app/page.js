@@ -21,8 +21,8 @@ export default function Home() {
       bn: "টাকা ও হিসাব",
       enDesc: "Simple finance and percentage tools.",
       bnDesc: "টাকা, সুদ, শতাংশ এবং অন্যান্য সাধারণ হিসাব।",
-      link: "#",
-      active: false,
+      link: "/percentage-calculator",
+      active: true,
     },
     {
       en: "Date & Time",
