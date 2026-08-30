@@ -203,11 +203,23 @@ export default function Home() {
       : "Worklity · Simple Tools. Smarter Work."}
   </div>
 
-  <div style={{ marginTop: "10px" }}>
-    <Link href="/about">
-      {bn ? "আমাদের সম্পর্কে" : "About"}
-    </Link>
-  </div>
+ <div
+  style={{
+    marginTop: "10px",
+    display: "flex",
+    justifyContent: "center",
+    gap: "18px",
+    flexWrap: "wrap",
+  }}
+>
+  <Link href="/about">
+    {bn ? "আমাদের সম্পর্কে" : "About"}
+  </Link>
+
+  <Link href="/privacy-policy">
+    {bn ? "গোপনীয়তা নীতি" : "Privacy Policy"}
+  </Link>
+</div>
 </footer>
     </main>
   );
