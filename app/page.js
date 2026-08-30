@@ -196,11 +196,19 @@ export default function Home() {
         )}
       </section>
 
-      <footer>
-        {bn
-          ? "Worklity · সহজ টুল। স্মার্ট কাজ।"
-          : "Worklity · Simple Tools. Smarter Work."}
-      </footer>
+    <footer>
+  <div>
+    {bn
+      ? "Worklity · সহজ টুল। স্মার্ট কাজ।"
+      : "Worklity · Simple Tools. Smarter Work."}
+  </div>
+
+  <div style={{ marginTop: "10px" }}>
+    <Link href="/about">
+      {bn ? "আমাদের সম্পর্কে" : "About"}
+    </Link>
+  </div>
+</footer>
     </main>
   );
 }
