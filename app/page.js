@@ -29,8 +29,8 @@ export default function Home() {
       bn: "তারিখ ও সময়",
       enDesc: "Age and date utilities.",
       bnDesc: "বয়স, তারিখ এবং সময়ের দরকারি হিসাব।",
-      link: "#",
-      active: false,
+      link: "/age-calculator",
+      active: true,
     },
     {
       en: "Office & Data",
