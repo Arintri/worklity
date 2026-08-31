@@ -310,37 +310,222 @@ export default function LandAreaCalculatorClient() {
       <section className="explain">
         <h2>
           {bn
-            ? "জমির ক্ষেত্রফল কীভাবে হিসাব করা হয়?"
-            : "How is land area calculated?"}
+            ? "জমির ক্ষেত্রফল রূপান্তর টেবিল"
+            : "Land Area Conversion Table"}
+        </h2>
+
+        <p>
+          {bn
+            ? "জমির ক্ষেত্রফলের প্রচলিত এককগুলোর দ্রুত তুলনার জন্য নিচের রূপান্তরগুলো ব্যবহার করুন।"
+            : "Use these common conversions for a quick comparison of land area units."}
+        </p>
+
+        <div style={{ overflowX: "auto" }}>
+          <table
+            style={{
+              width: "100%",
+              borderCollapse: "collapse",
+              margin: "20px 0",
+              minWidth: "520px",
+            }}
+          >
+            <thead>
+              <tr>
+                <th
+                  style={{
+                    padding: "13px",
+                    textAlign: "left",
+                    border: "1px solid var(--line)",
+                    background: "var(--s)",
+                  }}
+                >
+                  {bn ? "জমির একক" : "Land unit"}
+                </th>
+                <th
+                  style={{
+                    padding: "13px",
+                    textAlign: "left",
+                    border: "1px solid var(--line)",
+                    background: "var(--s)",
+                  }}
+                >
+                  {bn ? "রূপান্তর" : "Conversion"}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={{ padding: "13px", border: "1px solid var(--line)" }}>
+                  {bn ? "১ ডেসিমেল / ডিসিমিল" : "1 Decimal / Disimil"}
+                </td>
+                <td style={{ padding: "13px", border: "1px solid var(--line)" }}>
+                  {bn ? "৪৩৫.৬ স্কয়ার ফিট" : "435.6 sq ft"}
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: "13px", border: "1px solid var(--line)" }}>
+                  {bn
+                    ? "১ কাঠা (পশ্চিমবঙ্গে প্রচলিত)"
+                    : "1 Katha (commonly used in West Bengal)"}
+                </td>
+                <td style={{ padding: "13px", border: "1px solid var(--line)" }}>
+                  {bn ? "৭২০ স্কয়ার ফিট" : "720 sq ft"}
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: "13px", border: "1px solid var(--line)" }}>
+                  {bn
+                    ? "১ বিঘা (পশ্চিমবঙ্গে প্রচলিত)"
+                    : "1 Bigha (commonly used in West Bengal)"}
+                </td>
+                <td style={{ padding: "13px", border: "1px solid var(--line)" }}>
+                  {bn
+                    ? "১৪,৪০০ স্কয়ার ফিট = ২০ কাঠা"
+                    : "14,400 sq ft = 20 Katha"}
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: "13px", border: "1px solid var(--line)" }}>
+                  {bn ? "১ একর" : "1 Acre"}
+                </td>
+                <td style={{ padding: "13px", border: "1px solid var(--line)" }}>
+                  {bn ? "৪৩,৫৬০ স্কয়ার ফিট" : "43,560 sq ft"}
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: "13px", border: "1px solid var(--line)" }}>
+                  {bn ? "১ হেক্টর" : "1 Hectare"}
+                </td>
+                <td style={{ padding: "13px", border: "1px solid var(--line)" }}>
+                  {bn ? "প্রায় ১,০৭,৬৩৯.১ স্কয়ার ফিট" : "Approximately 107,639.1 sq ft"}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          <small>
+            {bn
+              ? "নোট: কাঠা ও বিঘার মাপ অঞ্চল ও স্থানীয় রীতি অনুযায়ী ভিন্ন হতে পারে।"
+              : "Note: Katha and Bigha measurements can vary by region and local practice."}
+          </small>
+        </p>
+
+        <h2>{bn ? "উদাহরণসহ হিসাব" : "Example Calculation"}</h2>
+
+        <p>
+          {bn ? (
+            <>
+              দৈর্ঘ্য = ৫০ ফুট এবং প্রস্থ = ৩০ ফুট হলে,
+              <b> ক্ষেত্রফল = ৫০ × ৩০ = ১,৫০০ স্কয়ার ফিট</b>।
+            </>
+          ) : (
+            <>
+              If Length = 50 ft and Width = 30 ft,
+              <b> Area = 50 × 30 = 1,500 sq ft</b>.
+            </>
+          )}
+        </p>
+
+        <div className="results">
+          <div>
+            {bn ? "ডেসিমেল / ডিসিমিল" : "Decimal / Disimil"}
+            <b>{bn ? "প্রায় ৩.৪৪৩৫" : "Approximately 3.4435"}</b>
+          </div>
+          <div>
+            {bn ? "কাঠা (পশ্চিমবঙ্গ)" : "Katha (West Bengal)"}
+            <b>{bn ? "প্রায় ২.০৮৩৩" : "Approximately 2.0833"}</b>
+          </div>
+          <div>
+            {bn ? "বিঘা (পশ্চিমবঙ্গ)" : "Bigha (West Bengal)"}
+            <b>{bn ? "প্রায় ০.১০৪২" : "Approximately 0.1042"}</b>
+          </div>
+        </div>
+
+        <h2>
+          {bn
+            ? "জমির ক্ষেত্রফল কীভাবে হিসাব করবেন"
+            : "How to Calculate Land Area"}
         </h2>
 
         <p>
           {bn ? (
             <>
-              আয়তাকার জমির সাধারণ হিসাব:
-              <b> ক্ষেত্রফল = দৈর্ঘ্য × প্রস্থ</b>। এরপর Worklity
-              সেই ক্ষেত্রফলকে বিভিন্ন জমির এককে পরিবর্তন করে দেখায়।
+              আয়তাকার জমির জন্য <b>ক্ষেত্রফল = দৈর্ঘ্য × প্রস্থ</b>। সঠিক
+              ফল পেতে দৈর্ঘ্য ও প্রস্থ—দুটিই একই এককে মাপুন।
             </>
           ) : (
             <>
-              For a rectangular plot:
-              <b> Area = Length × Width</b>. Worklity then
-              automatically converts the calculated area into
-              commonly used land units.
+              For a rectangular plot, <b>Area = Length × Width</b>. Measure
+              both length and width in the same unit to get the correct result.
             </>
           )}
         </p>
 
-        <h2>
-          {bn
-            ? "পশ্চিমবঙ্গে কাঠা ও বিঘার হিসাব"
-            : "West Bengal Katha & Bigha Conversion"}
-        </h2>
+        <h2>{bn ? "অনিয়মিত আকৃতির জমি" : "Irregular Land"}</h2>
 
         <p>
           {bn
-            ? "পশ্চিমবঙ্গে প্রচলিত হিসাবে ১ কাঠা = ৭২০ স্কয়ার ফিট এবং ২০ কাঠা = ১ বিঘা। অর্থাৎ ১ বিঘা = ১৪,৪০০ স্কয়ার ফিট।"
-            : "In the commonly used West Bengal system, 1 Katha is calculated as 720 square feet and 20 Katha make 1 Bigha. This means 1 Bigha equals 14,400 square feet."}
+            ? "এই ক্যালকুলেটর সরাসরি আয়তাকার জমির ক্ষেত্রফল হিসাব করে। অনিয়মিত আকৃতির জমিকে সহজ কয়েকটি আকৃতিতে ভাগ করে আলাদাভাবে হিসাব করা যেতে পারে। গুরুত্বপূর্ণ সম্পত্তি-সংক্রান্ত কাজে যোগ্য সার্ভেয়ার বা সরকারি জমি পরিমাপের সহায়তা নিন।"
+            : "This calculator directly calculates rectangular plots. For an irregular plot, divide the land into simpler shapes and calculate each part separately. For important property matters, use a qualified surveyor or an official land measurement."}
+        </p>
+
+        <h2>{bn ? "সাধারণ প্রশ্ন" : "Frequently Asked Questions"}</h2>
+
+        <h3>
+          {bn
+            ? "পশ্চিমবঙ্গে ১ কাঠায় কত স্কয়ার ফিট?"
+            : "How many square feet are in 1 Katha in West Bengal?"}
+        </h3>
+        <p>
+          {bn
+            ? "পশ্চিমবঙ্গে প্রচলিত হিসাবে ১ কাঠা = ৭২০ স্কয়ার ফিট।"
+            : "In the commonly used West Bengal system, 1 Katha equals 720 square feet."}
+        </p>
+
+        <h3>
+          {bn
+            ? "পশ্চিমবঙ্গে ১ বিঘায় কত কাঠা?"
+            : "How many Katha are in 1 Bigha in West Bengal?"}
+        </h3>
+        <p>
+          {bn
+            ? "পশ্চিমবঙ্গে প্রচলিত হিসাবে ১ বিঘা = ২০ কাঠা।"
+            : "In the commonly used West Bengal system, 1 Bigha equals 20 Katha."}
+        </p>
+
+        <h3>
+          {bn
+            ? "১ ডেসিমেলে কত স্কয়ার ফিট?"
+            : "How many square feet are in 1 Decimal?"}
+        </h3>
+        <p>
+          {bn
+            ? "১ ডেসিমেল বা ডিসিমিল = ৪৩৫.৬ স্কয়ার ফিট।"
+            : "1 Decimal, also called Disimil, equals 435.6 square feet."}
+        </p>
+
+        <h3>
+          {bn
+            ? "স্থানভেদে কাঠা ও বিঘার মাপ কি আলাদা হতে পারে?"
+            : "Can Katha and Bigha measurements vary by location?"}
+        </h3>
+        <p>
+          {bn
+            ? "হ্যাঁ। অঞ্চল ও স্থানীয় রীতি অনুযায়ী কাঠা ও বিঘার মাপ ভিন্ন হতে পারে, তাই স্থানীয় মাপ যাচাই করুন।"
+            : "Yes. Their sizes can vary by region and local practice, so check the conversion used in your location."}
+        </p>
+
+        <h3>
+          {bn
+            ? "সরকারি জমি রেজিস্ট্রেশনের জন্য কি এই ক্যালকুলেটর ব্যবহার করা যাবে?"
+            : "Can I use this calculator for official land registration?"}
+        </h3>
+        <p>
+          {bn
+            ? "এটি সাধারণ হিসাব ও আনুমানিক রূপান্তরের জন্য। রেজিস্ট্রেশন বা গুরুত্বপূর্ণ সম্পত্তি-সংক্রান্ত কাজে সরকারি রেকর্ড এবং যোগ্য পেশাদারের পরিমাপ ব্যবহার করুন।"
+            : "Use it for general calculations and estimates. For registration or important property matters, rely on official records and measurements from a qualified professional."}
         </p>
       </section>
     </main>
