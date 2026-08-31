@@ -45,6 +45,22 @@ export default function Home() {
       active: true,
     },
     {
+      categoryEn: "Pregnancy & Dates",
+      categoryBn: "গর্ভকাল ও তারিখ",
+      en: "Pregnancy EDD Calculator",
+      bn: "প্রেগন্যান্সি EDD ক্যালকুলেটর",
+      enDesc:
+        "Estimate your due date and pregnancy timeline from the first day of your last period.",
+      bnDesc:
+        "শেষ মাসিকের প্রথম দিন থেকে আনুমানিক প্রসবের তারিখ ও গর্ভকাল হিসাব করুন।",
+      enAction: "Calculate Due Date",
+      bnAction: "প্রসবের তারিখ হিসাব করুন",
+      link: "/edd-calculator",
+      icon: "✦",
+      accent: "violet",
+      active: true,
+    },
+    {
       categoryEn: "Office & Data",
       categoryBn: "অফিস ও ডাটা",
       en: "Office & Data Tools",
@@ -205,8 +221,8 @@ export default function Home() {
                 <span className={tool.active ? "toolAction" : "comingSoon"}>
                   {tool.active
                     ? bn
-                      ? "হিসাব করুন"
-                      : "Calculate Now"
+                      ? tool.bnAction || "হিসাব করুন"
+                      : tool.enAction || "Calculate Now"
                     : bn
                     ? "শীঘ্রই আসছে"
                     : "Coming Soon"}
