@@ -222,6 +222,9 @@ export default function Home() {
     <Link href="/disclaimer">
   {bn ? "দায়মুক্তি" : "Disclaimer"}
 </Link>
+  <Link href="/contact">
+  {bn ? "যোগাযোগ" : "Contact"}
+</Link>
 </div>
 </footer>
     </main>
