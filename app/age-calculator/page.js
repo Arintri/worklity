@@ -2,51 +2,11 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-
-function parseDate(value) {
-  if (!value) return null;
-
-  const [y, m, d] = value.split("-").map(Number);
-
-  if (!y || !m || !d) return null;
-
-  return new Date(Date.UTC(y, m - 1, d));
-}
-
-function daysInMonth(year, month) {
-  return new Date(Date.UTC(year, month, 0)).getUTCDate();
-}
-
-function calculateAge(dob, target) {
-  let years = target.getUTCFullYear() - dob.getUTCFullYear();
-  let months = target.getUTCMonth() - dob.getUTCMonth();
-  let days = target.getUTCDate() - dob.getUTCDate();
-
-  if (days < 0) {
-    months--;
-
-    const previousMonth =
-      target.getUTCMonth() === 0 ? 12 : target.getUTCMonth();
-
-    const previousMonthYear =
-      target.getUTCMonth() === 0
-        ? target.getUTCFullYear() - 1
-        : target.getUTCFullYear();
-
-    days += daysInMonth(previousMonthYear, previousMonth);
-  }
-
-  if (months < 0) {
-    years--;
-    months += 12;
-  }
-
-  return { years, months, days };
-}
-
-function differenceInDays(a, b) {
-  return Math.floor((b.getTime() - a.getTime()) / 86400000);
-}
+import {
+  calculateAgeDetails,
+  isValidDate,
+  parseDate,
+} from "./ageCalculations.mjs";
 
 function formatDate(date, bn) {
   return new Intl.DateTimeFormat(bn ? "bn-IN" : "en-IN", {
@@ -67,7 +27,7 @@ export default function AgeCalculator() {
   const result = useMemo(() => {
     const birth = parseDate(dob);
 
-    if (!birth) return null;
+    if (!birth) return dob ? { error: "invalid" } : null;
 
     let target;
 
@@ -85,58 +45,17 @@ export default function AgeCalculator() {
       );
     }
 
-    if (!target || birth > target) {
-      return { error: true };
+    if (!target || !isValidDate(target)) {
+      return { error: "invalid" };
     }
 
-    const age = calculateAge(birth, target);
-    const totalDays = differenceInDays(birth, target);
-
-    let nextBirthdayYear = target.getUTCFullYear();
-
-    let nextBirthday = new Date(
-      Date.UTC(
-        nextBirthdayYear,
-        birth.getUTCMonth(),
-        Math.min(
-          birth.getUTCDate(),
-          daysInMonth(
-            nextBirthdayYear,
-            birth.getUTCMonth() + 1
-          )
-        )
-      )
-    );
-
-    if (nextBirthday < target) {
-      nextBirthdayYear++;
-
-      nextBirthday = new Date(
-        Date.UTC(
-          nextBirthdayYear,
-          birth.getUTCMonth(),
-          Math.min(
-            birth.getUTCDate(),
-            daysInMonth(
-              nextBirthdayYear,
-              birth.getUTCMonth() + 1
-            )
-          )
-        )
-      );
+    if (birth > target) {
+      return { error: "beforeBirth" };
     }
 
-    const birthdayDays = differenceInDays(
-      target,
-      nextBirthday
-    );
+    const details = calculateAgeDetails(birth, target);
 
-    return {
-      ...age,
-      totalDays,
-      nextBirthday,
-      birthdayDays,
-    };
+    return details || { error: "invalid" };
   }, [dob, asOf]);
 
   const reset = () => {
@@ -268,8 +187,12 @@ export default function AgeCalculator() {
 
             {result?.error && (
               <h2>
-                {bn
-                  ? "সঠিক তারিখ নির্বাচন করুন"
+                {result.error === "beforeBirth"
+                  ? bn
+                    ? "যে তারিখ পর্যন্ত বয়স হিসাব করবেন, সেটি জন্মতারিখের আগে হতে পারে না"
+                    : "Age as of date cannot be earlier than the date of birth"
+                  : bn
+                  ? "সঠিক ও বৈধ তারিখ নির্বাচন করুন"
                   : "Please select a valid date"}
               </h2>
             )}
