@@ -29,7 +29,9 @@ export const metadata = {
     index: true,
     follow: true,
   },
-
+verification: {
+  google: "m5K_NDh2xxLNWb9Jd0N2JdpkLmDGePn6SzXJu3XXZAs",
+},
   openGraph: {
     type: "website",
     siteName: "Worklity",
