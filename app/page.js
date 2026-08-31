@@ -219,6 +219,9 @@ export default function Home() {
   <Link href="/privacy-policy">
     {bn ? "গোপনীয়তা নীতি" : "Privacy Policy"}
   </Link>
+    <Link href="/disclaimer">
+  {bn ? "দায়মুক্তি" : "Disclaimer"}
+</Link>
 </div>
 </footer>
     </main>
