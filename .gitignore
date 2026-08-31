@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Deployment output
+.vercel/
+
+# Local pnpm files
+.pnpm-store/
+pnpm-lock.yaml
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
