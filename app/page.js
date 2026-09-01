@@ -77,6 +77,21 @@ export default function Home() {
       active: true,
     },
     {
+      categoryEn: "Child Health",
+      categoryBn: "শিশুর টিকাদান",
+      en: "Vaccination Due Date Calculator",
+      bn: "টিকাদান তারিখ ক্যালকুলেটর",
+      enDesc:
+        "See a child's vaccination schedule from date of birth based on India's immunization schedule.",
+      bnDesc: "শিশুর জন্মতারিখ থেকে ভারতের টিকাদান সময়সূচি দেখুন।",
+      enAction: "View Vaccine Schedule",
+      bnAction: "টিকাদান সময়সূচি দেখুন",
+      link: "/vaccination-calculator",
+      icon: "✚",
+      accent: "indigo",
+      active: true,
+    },
+    {
       categoryEn: "Office & Data",
       categoryBn: "অফিস ও ডাটা",
       en: "Office & Data Tools",
