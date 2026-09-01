@@ -61,6 +61,22 @@ export default function Home() {
       active: true,
     },
     {
+      categoryEn: "Loans & Finance",
+      categoryBn: "ঋণ ও ফাইন্যান্স",
+      en: "Loan EMI Calculator",
+      bn: "লোন EMI ক্যালকুলেটর",
+      enDesc:
+        "Calculate monthly EMI, total interest and repayment with a detailed loan schedule.",
+      bnDesc:
+        "মাসিক EMI, মোট সুদ ও মোট পরিশোধের হিসাবসহ বিস্তারিত ঋণ পরিশোধের সূচি দেখুন।",
+      enAction: "Calculate EMI",
+      bnAction: "EMI হিসাব করুন",
+      link: "/emi-calculator",
+      icon: "₹",
+      accent: "cyan",
+      active: true,
+    },
+    {
       categoryEn: "Office & Data",
       categoryBn: "অফিস ও ডাটা",
       en: "Office & Data Tools",
