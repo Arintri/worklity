@@ -11,6 +11,7 @@ import {
   differenceInCalendarDays,
   formatISODate,
   getTrimester,
+  isBeyondUsualPregnancyDatingRange,
   parseISODate,
 } from "../app/edd-calculator/eddCalculations.mjs";
 
@@ -112,6 +113,26 @@ test("trimester boundaries are exact", () => {
   assert.equal(detailsAtElapsedDay(98).trimester, "second");
   assert.equal(detailsAtElapsedDay(195).trimester, "second");
   assert.equal(detailsAtElapsedDay(196).trimester, "third");
+});
+
+test("beyond-range presentation state starts only after 42 completed weeks", () => {
+  assert.equal(isBeyondUsualPregnancyDatingRange(293), false);
+  assert.equal(isBeyondUsualPregnancyDatingRange(294), false);
+  assert.equal(isBeyondUsualPregnancyDatingRange(295), true);
+  assert.equal(isBeyondUsualPregnancyDatingRange(-1), false);
+  assert.equal(isBeyondUsualPregnancyDatingRange(Number.NaN), false);
+
+  const normal = detailsAtElapsedDay(280);
+  assert.equal(isBeyondUsualPregnancyDatingRange(normal.elapsedDays), false);
+  assert.equal(normal.completedWeeks, 40);
+  assert.equal(normal.remainingDays, 0);
+  assert.equal(normal.trimester, "third");
+  assert.equal(normal.progress.normalizedPercent, 100);
+
+  const beyond = detailsAtElapsedDay(295);
+  assert.equal(isBeyondUsualPregnancyDatingRange(beyond.elapsedDays), true);
+  assert.equal(beyond.completedWeeks, 42);
+  assert.equal(beyond.remainingDays, 1);
 });
 
 test("pregnancy progress is precise and normalized to 0-100 percent", () => {

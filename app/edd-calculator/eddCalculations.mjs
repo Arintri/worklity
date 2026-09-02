@@ -1,4 +1,5 @@
 export const PREGNANCY_LENGTH_DAYS = 280;
+export const USUAL_PREGNANCY_DATING_RANGE_DAYS = 42 * 7;
 
 const DAY_MS = 86400000;
 
@@ -170,6 +171,13 @@ export function calculatePregnancyProgress(elapsedDays) {
     precisePercent,
     normalizedPercent,
   };
+}
+
+export function isBeyondUsualPregnancyDatingRange(elapsedDays) {
+  return (
+    Number.isSafeInteger(elapsedDays) &&
+    elapsedDays > USUAL_PREGNANCY_DATING_RANGE_DAYS
+  );
 }
 
 export function calculateEDDDetails(lmpValue, referenceValue) {
