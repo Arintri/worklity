@@ -103,12 +103,13 @@ test("14-week dates are DOB plus exactly 98 calendar days", () => {
   }
 });
 
-test("9-12 month stages remain official date windows", () => {
+test("MR-1, fIPV-3, PCV booster, and JE-1 share the 9-11 month window", () => {
   const result = generate({ dob: "2024-01-31", referenceDate: "2025-02-01" });
-  for (const doseId of ["mr-1", "pcv-booster", "je-1"]) {
+  for (const doseId of ["mr-1", "fipv-3", "pcv-booster", "je-1"]) {
     const dose = findDose(result, doseId);
     assert.equal(dose.officialDueStart, "2024-10-31");
-    assert.equal(dose.officialDueEnd, "2025-01-31");
+    assert.equal(dose.officialDueEnd, "2024-12-31");
+    assert.equal(dose.visitGroup, "9-to-11-months");
   }
 });
 
@@ -290,6 +291,14 @@ test("JE unconfirmed remains present without a medical assumption", () => {
 test("HPV is a separate single-dose programme with non-permanent campaign policy", () => {
   assert.equal(HPV_PROGRAMME.programmeType, "SEPARATE_PROGRAMME");
   assert.equal(HPV_PROGRAMME.routineRule.structure, "SINGLE_DOSE");
+  assert.equal(HPV_PROGRAMME.routineRule.internalMilestoneOnly, true);
+  assert.deepEqual(HPV_PROGRAMME.eligibilityPresentation, {
+    targetGroup: "ELIGIBLE_GIRLS",
+    programmeAgeYears: 14,
+    doseStructure: "SINGLE_DOSE",
+    exposeExactDueDate: false,
+    individualEligibilityDecision: false,
+  });
   assert.equal(HPV_PROGRAMME.transitionalCampaignPolicy.permanentAgeRule, false);
   assert.equal(HPV_PROGRAMME.transitionalCampaignPolicy.automaticallyApplied, false);
   assert.equal(

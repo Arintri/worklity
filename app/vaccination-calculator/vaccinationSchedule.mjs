@@ -29,11 +29,16 @@ export const SOURCE_REFERENCES = Object.freeze({
     title: "Routine Immunization Manual for Health Workers",
     url: "https://www.mohfw.gov.in/sites/default/files/Routine%20Immunization%20Manual%20For%20Health%20Workers.pdf",
   },
+  MOHFW_ANNUAL_REPORT_2024_25: {
+    publisher: "Ministry of Health & Family Welfare, Government of India",
+    title: "Annual Report 2024–25",
+    url: "https://mohfw.gov.in/sites/default/files/Final%20Printed%20English%20AR%202024-25.pdf",
+  },
   JE_PROGRAMME: {
     publisher:
       "National Center for Vector Borne Diseases Control, Ministry of Health & Family Welfare",
-    title: "Prevention and control of Japanese Encephalitis",
-    url: "https://ncvbdc.mohfw.gov.in/index4.php?lang=1&level=0&lid=3761&linkid=484",
+    title: "Japanese Encephalitis vaccination guidance",
+    url: "https://ncvbdc.mohfw.gov.in/index1.php?lang=1&level=2&lid=3759&sublinkid=5922&theme=Green",
   },
   HPV_PROGRAMME_2026: {
     publisher: "Press Information Bureau, Government of India",
@@ -107,9 +112,10 @@ export const ROUTINE_VACCINE_DOSES = Object.freeze([
   dose({ doseId: "fipv-2", vaccineId: "fipv", seriesId: "fipv", doseNumber: 2, en: "fIPV-2", bn: "এফআইপিভি-২", officialTiming: atWeeks(14), visitGroup: "14-weeks" }),
   dose({ doseId: "pcv-2", vaccineId: "pcv", seriesId: "pcv", doseNumber: 2, en: "PCV-2", bn: "পিসিভি-২", officialTiming: atWeeks(14), visitGroup: "14-weeks" }),
 
-  dose({ doseId: "mr-1", vaccineId: "mr", seriesId: "mr", doseNumber: 1, en: "MR-1", bn: "এমআর-১", officialTiming: monthWindow(9, 12), visitGroup: "9-to-12-months" }),
-  dose({ doseId: "pcv-booster", vaccineId: "pcv", seriesId: "pcv", doseNumber: 3, en: "PCV Booster", bn: "পিসিভি বুস্টার", officialTiming: monthWindow(9, 12), visitGroup: "9-to-12-months" }),
-  dose({ doseId: "je-1", vaccineId: "je", seriesId: "je", doseNumber: 1, en: "JE-1", bn: "জেই-১", officialTiming: monthWindow(9, 12), visitGroup: "9-to-12-months", applicability: jeConditional, sourceRef: "JE_PROGRAMME", notes: "Applicable only where the Government JE programme applies." }),
+  dose({ doseId: "mr-1", vaccineId: "mr", seriesId: "mr", doseNumber: 1, en: "MR-1", bn: "এমআর-১", officialTiming: monthWindow(9, 11), visitGroup: "9-to-11-months" }),
+  dose({ doseId: "fipv-3", vaccineId: "fipv", seriesId: "fipv", doseNumber: 3, en: "fIPV-3", bn: "এফআইপিভি-৩", officialTiming: monthWindow(9, 11), visitGroup: "9-to-11-months" }),
+  dose({ doseId: "pcv-booster", vaccineId: "pcv", seriesId: "pcv", doseNumber: 3, en: "PCV Booster", bn: "পিসিভি বুস্টার", officialTiming: monthWindow(9, 11), visitGroup: "9-to-11-months" }),
+  dose({ doseId: "je-1", vaccineId: "je", seriesId: "je", doseNumber: 1, en: "JE-1", bn: "জেই-১", officialTiming: monthWindow(9, 11), visitGroup: "9-to-11-months", applicability: jeConditional, sourceRef: "JE_PROGRAMME", notes: "Applicable only where the Government JE programme applies." }),
 
   dose({ doseId: "mr-2", vaccineId: "mr", seriesId: "mr", doseNumber: 2, en: "MR-2", bn: "এমআর-২", officialTiming: monthWindow(16, 24), visitGroup: "16-to-24-months" }),
   dose({ doseId: "dpt-booster-1", vaccineId: "dpt", seriesId: "dpt", doseNumber: 1, en: "DPT Booster-1", bn: "ডিপিটি বুস্টার-১", officialTiming: monthWindow(16, 24), visitGroup: "16-to-24-months" }),
@@ -126,9 +132,17 @@ export const HPV_PROGRAMME = Object.freeze({
   programmeType: "SEPARATE_PROGRAMME",
   sourceRef: "HPV_PROGRAMME_2026",
   applicability: hpvFemaleProgramme,
+  eligibilityPresentation: Object.freeze({
+    targetGroup: "ELIGIBLE_GIRLS",
+    programmeAgeYears: 14,
+    doseStructure: "SINGLE_DOSE",
+    exposeExactDueDate: false,
+    individualEligibilityDecision: false,
+  }),
   routineRule: Object.freeze({
     structure: "SINGLE_DOSE",
     officialTiming: yearWindow(14),
+    internalMilestoneOnly: true,
   }),
   entries: Object.freeze([
     dose({

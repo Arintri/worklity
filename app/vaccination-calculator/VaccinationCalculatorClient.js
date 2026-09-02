@@ -21,8 +21,9 @@ const COPY = {
     required: "Please enter the child's date of birth.", invalid: "Please enter a valid date of birth.", future: "Date of birth cannot be in the future.",
     schedule: "Vaccination Schedule", calculated: "Calculated from Date of Birth", child: "Child",
     due: "Due", dueWindow: "Calculated Due Window", print: "Print / Save PDF",
-    jeNote: "In applicable/endemic areas", hpvTitle: "HPV programme",
-    hpvText: "HPV programme eligibility should be confirmed with the vaccination centre. This schedule does not make an eligibility decision.",
+    jeNote: "In applicable/endemic areas", hpvTitle: "HPV Vaccination Programme",
+    hpvProgrammeAge: "Programme age: 14 years", hpvSingleDose: "Single dose",
+    hpvText: "The Government programme applies to eligible girls aged 14 years. This calculator does not determine individual programme eligibility. Eligibility must be confirmed with the vaccination centre.",
     recordTitle: "Record Vaccination & Check Next Due",
     recordSubtitle: "Optional — use this if a vaccine was given on a different date.",
     open: "Open optional record tool", close: "Close optional record tool",
@@ -39,12 +40,19 @@ const COPY = {
     unchanged: "The original DOB-based schedule above remains unchanged.",
     about: "About this schedule", aboutText: "Dates are calculated from the child's date of birth using the selected India schedule version. Official age ranges are shown as full due windows.",
     jeTitle: "JE vaccination", jeText: "JE doses are shown because they are part of the configured schedule, but apply only in designated or endemic programme areas. Confirm locally.",
-    hpvInfo: "HPV vaccination", hpvInfoText: "HPV is shown separately. Current programme and individual eligibility should be confirmed with a vaccination centre.",
+    hpvInfo: "HPV vaccination", hpvInfoText: "HPV is shown separately from the routine childhood schedule. The Government programme applies to eligible girls aged 14 years, and individual eligibility must be confirmed with a vaccination centre.",
     delayed: "Delayed / missed vaccination", delayedText: "Do not restart or reschedule a series based only on this page. Delayed-dose timing needs professional confirmation unless a verified rule is available.",
     important: "Important information",
     disclaimer: "This calculator provides a DOB-based vaccination planning schedule for information only. Vaccination eligibility, delayed doses and medical decisions should be confirmed with a qualified health professional or vaccination centre. It does not replace U-WIN, MCP Card or official vaccination records.",
-    version: "Schedule version", birth: "Birth", weeks6: "6 Weeks", weeks10: "10 Weeks", weeks14: "14 Weeks",
-    months9: "9–12 Months", months16: "16–24 Months", years5: "5–6 Years", years10: "10 Years", years16: "16 Years",
+    reviewed: "Worklity schedule reviewed: 1 September 2026",
+    references: "Official References",
+    referencesIntro: "Government sources used to review the schedule. These links do not imply endorsement of Worklity.",
+    routineManual: "Ministry of Health & Family Welfare — Routine Immunization Manual for Health Workers",
+    annualReport: "Ministry of Health & Family Welfare — Annual Report 2024–25",
+    jeGuidance: "NCVBDC — Japanese Encephalitis vaccination guidance",
+    hpvGuidance: "Press Information Bureau — Update on National HPV Vaccination Programme",
+    birth: "Birth", weeks6: "6 Weeks", weeks10: "10 Weeks", weeks14: "14 Weeks",
+    months9: "9–11 Months", months16: "16–24 Months", years5: "5–6 Years", years10: "10 Years", years16: "16 Years",
   },
   bn: {
     language: "ভাষা বেছে নিন", title: "টিকার নির্ধারিত তারিখ ক্যালকুলেটর",
@@ -55,8 +63,9 @@ const COPY = {
     required: "শিশুর জন্মতারিখ লিখুন।", invalid: "সঠিক জন্মতারিখ লিখুন।", future: "জন্মতারিখ ভবিষ্যতের হতে পারে না।",
     schedule: "টিকাদান সময়সূচি", calculated: "জন্মতারিখ থেকে হিসাব করা হয়েছে", child: "শিশু",
     due: "নির্ধারিত তারিখ", dueWindow: "হিসাব করা নির্ধারিত সময়সীমা", print: "প্রিন্ট / PDF সেভ করুন",
-    jeNote: "প্রযোজ্য/এন্ডেমিক এলাকায়", hpvTitle: "HPV কর্মসূচি",
-    hpvText: "HPV কর্মসূচির যোগ্যতা টিকাদান কেন্দ্র থেকে নিশ্চিত করুন। এই সময়সূচি নিজে থেকে যোগ্যতা নির্ধারণ করে না।",
+    jeNote: "প্রযোজ্য/এন্ডেমিক এলাকায়", hpvTitle: "HPV টিকাকরণ কর্মসূচি",
+    hpvProgrammeAge: "কর্মসূচির বয়স: ১৪ বছর", hpvSingleDose: "একটি ডোজ",
+    hpvText: "সরকারি কর্মসূচিটি ১৪ বছর বয়সী যোগ্য মেয়েদের জন্য প্রযোজ্য। এই ক্যালকুলেটর ব্যক্তিগত কর্মসূচির যোগ্যতা নির্ধারণ করে না। যোগ্যতা টিকাকরণ কেন্দ্র থেকে নিশ্চিত করুন।",
     recordTitle: "টিকার রেকর্ড ও পরবর্তী সময় দেখুন", recordSubtitle: "ঐচ্ছিক — কোনো টিকা অন্য তারিখে দেওয়া হলে এটি ব্যবহার করুন।",
     open: "ঐচ্ছিক রেকর্ড টুল খুলুন", close: "ঐচ্ছিক রেকর্ড টুল বন্ধ করুন",
     step1: "ধাপ ১", step2: "ধাপ ২", step3: "ধাপ ৩", selectDose: "টিকা / ডোজ বেছে নিন",
@@ -71,19 +80,26 @@ const COPY = {
     unchanged: "উপরের মূল জন্মতারিখভিত্তিক সময়সূচি অপরিবর্তিত আছে।",
     about: "এই সময়সূচি সম্পর্কে", aboutText: "নির্বাচিত ভারতীয় সময়সূচি অনুযায়ী শিশুর জন্মতারিখ থেকে তারিখ হিসাব করা হয়। সরকারি বয়সসীমা থাকলে পুরো সময়সীমা দেখানো হয়।",
     jeTitle: "JE টিকা", jeText: "কনফিগার করা সময়সূচির অংশ হিসেবে JE ডোজ দেখানো হয়েছে, তবে এটি শুধু নির্ধারিত বা এন্ডেমিক এলাকায় প্রযোজ্য। স্থানীয়ভাবে নিশ্চিত করুন।",
-    hpvInfo: "HPV টিকা", hpvInfoText: "HPV আলাদাভাবে দেখানো হয়েছে। বর্তমান কর্মসূচি ও ব্যক্তিগত যোগ্যতা টিকাদান কেন্দ্র থেকে নিশ্চিত করুন।",
+    hpvInfo: "HPV টিকা", hpvInfoText: "HPV নিয়মিত শৈশব টিকাদান সময়সূচি থেকে আলাদাভাবে দেখানো হয়েছে। সরকারি কর্মসূচিটি ১৪ বছর বয়সী যোগ্য মেয়েদের জন্য প্রযোজ্য এবং ব্যক্তিগত যোগ্যতা টিকাদান কেন্দ্র থেকে নিশ্চিত করতে হবে।",
     delayed: "দেরি / মিস হওয়া টিকা", delayedText: "শুধু এই পেজ দেখে টিকার সিরিজ আবার শুরু বা পুনর্নির্ধারণ করবেন না। যাচাইকৃত নিয়ম না থাকলে দেরি হওয়া ডোজের সময় বিশেষজ্ঞের কাছ থেকে নিশ্চিত করুন।",
     important: "গুরুত্বপূর্ণ তথ্য",
     disclaimer: "এই ক্যালকুলেটর শুধু তথ্যের জন্য জন্মতারিখভিত্তিক টিকাদান পরিকল্পনা দেয়। টিকার যোগ্যতা, দেরি হওয়া ডোজ ও চিকিৎসা সংক্রান্ত সিদ্ধান্ত চিকিৎসক বা টিকাদান কেন্দ্র থেকে নিশ্চিত করুন। এটি U-WIN, MCP কার্ড বা সরকারি টিকাদান রেকর্ডের বিকল্প নয়।",
-    version: "সময়সূচির সংস্করণ", birth: "জন্মের সময়", weeks6: "৬ সপ্তাহ", weeks10: "১০ সপ্তাহ", weeks14: "১৪ সপ্তাহ",
-    months9: "৯–১২ মাস", months16: "১৬–২৪ মাস", years5: "৫–৬ বছর", years10: "১০ বছর", years16: "১৬ বছর",
+    reviewed: "Worklity সময়সূচি পর্যালোচনা: ১ সেপ্টেম্বর ২০২৬",
+    references: "সরকারি তথ্যসূত্র",
+    referencesIntro: "সময়সূচি পর্যালোচনায় ব্যবহৃত সরকারি তথ্যসূত্র। এই লিংকগুলোর অর্থ সংশ্লিষ্ট সংস্থাগুলো Worklity-কে অনুমোদন করে—এমন নয়।",
+    routineManual: "স্বাস্থ্য ও পরিবার কল্যাণ মন্ত্রণালয় — স্বাস্থ্যকর্মীদের জন্য নিয়মিত টিকাদান নির্দেশিকা",
+    annualReport: "স্বাস্থ্য ও পরিবার কল্যাণ মন্ত্রণালয় — বার্ষিক প্রতিবেদন ২০২৪–২৫",
+    jeGuidance: "NCVBDC — জাপানিজ এনসেফালাইটিস টিকাদান নির্দেশনা",
+    hpvGuidance: "প্রেস ইনফরমেশন ব্যুরো — জাতীয় HPV টিকাকরণ কর্মসূচির হালনাগাদ তথ্য",
+    birth: "জন্মের সময়", weeks6: "৬ সপ্তাহ", weeks10: "১০ সপ্তাহ", weeks14: "১৪ সপ্তাহ",
+    months9: "৯–১১ মাস", months16: "১৬–২৪ মাস", years5: "৫–৬ বছর", years10: "১০ বছর", years16: "১৬ বছর",
   },
 };
 
 const STAGES = [
   ["birth", "birth", "rose", "B"], ["6-weeks", "weeks6", "green", "6"],
   ["10-weeks", "weeks10", "orange", "10"], ["14-weeks", "weeks14", "blue", "14"],
-  ["9-to-12-months", "months9", "violet", "9"], ["16-to-24-months", "months16", "teal", "16"],
+  ["9-to-11-months", "months9", "violet", "9"], ["16-to-24-months", "months16", "teal", "16"],
   ["5-to-6-years", "years5", "pink", "5"], ["10-years", "years10", "amber", "10"],
   ["16-years", "years16", "indigo", "16"],
 ];
@@ -174,7 +190,7 @@ export default function VaccinationCalculatorClient() {
           return <article className={`stageCard ${tone}`} key={id}><div className="stageTop"><span className="stageIcon" aria-hidden="true">{icon}</span><h3>{t[label]}</h3></div><div className="dateBlock"><span>{doses[0].officialDueStart === doses[0].officialDueEnd ? t.due : t.dueWindow}</span><strong>{dueText(doses[0])}</strong></div><ul>{doses.map((dose) => <li key={dose.doseId}><i aria-hidden="true">✓</i><span><strong>{dose.label[language]}</strong>{dose.vaccineId === "je" && <small>{t.jeNote}</small>}</span></li>)}</ul></article>;
         })}
       </section>
-      {hpv.length > 0 && <section className="hpvCard"><span aria-hidden="true">HPV</span><div><p className="eyebrow">{t.hpvTitle}</p><h2>{hpv.map((dose) => dose.label[language]).join(", ")}</h2><p><strong>{t.due}:</strong> {dueText(hpv[0])}</p><p>{t.hpvText}</p></div></section>}
+      {hpv.length > 0 && <section className="hpvCard"><span aria-hidden="true">HPV</span><div><h2>{t.hpvTitle}</h2><p><strong>{t.hpvProgrammeAge}</strong></p><p><strong>{t.hpvSingleDose}</strong></p><p>{t.hpvText}</p></div></section>}
       <button className="printButton mobilePrint screenOnly" type="button" onClick={() => window.print()}>{t.print}</button>
 
       <section className="recordSection screenOnly">
@@ -188,7 +204,17 @@ export default function VaccinationCalculatorClient() {
     </div>}
 
     <section className="info screenOnly"><details><summary>{t.about}</summary><p>{t.aboutText}</p></details><details><summary>{t.jeTitle}</summary><p>{t.jeText}</p></details><details><summary>{t.hpvInfo}</summary><p>{t.hpvInfoText}</p></details><details><summary>{t.delayed}</summary><p>{t.delayedText}</p></details></section>
-    <aside className="disclaimer"><span aria-hidden="true">i</span><div><h2>{t.important}</h2><p>{t.disclaimer}</p><small>{t.version}: {INDIA_UIP_SCHEDULE.version}</small></div></aside>
+    <section className="officialReferences">
+      <h2>{t.references}</h2>
+      <p>{t.referencesIntro}</p>
+      <ul>
+        <li><a href={INDIA_UIP_SCHEDULE.sourceReferences.UIP_ROUTINE_MANUAL.url} target="_blank" rel="noopener noreferrer">{t.routineManual}</a></li>
+        <li><a href={INDIA_UIP_SCHEDULE.sourceReferences.MOHFW_ANNUAL_REPORT_2024_25.url} target="_blank" rel="noopener noreferrer">{t.annualReport}</a></li>
+        <li><a href={INDIA_UIP_SCHEDULE.sourceReferences.JE_PROGRAMME.url} target="_blank" rel="noopener noreferrer">{t.jeGuidance}</a></li>
+        <li><a href={INDIA_UIP_SCHEDULE.sourceReferences.HPV_PROGRAMME_2026.url} target="_blank" rel="noopener noreferrer">{t.hpvGuidance}</a></li>
+      </ul>
+    </section>
+    <aside className="disclaimer"><span aria-hidden="true">i</span><div><h2>{t.important}</h2><p>{t.disclaimer}</p><small>{t.reviewed}</small></div></aside>
     <footer className="footer screenOnly"><Link href="/">Worklity</Link><span>Simple Tools. Smarter Work.</span></footer>
 
     <style jsx>{`
@@ -197,6 +223,7 @@ export default function VaccinationCalculatorClient() {
       @media(max-width:600px){.nav,.hero,.inputCard,.scheduleHead,.stageGrid,.hpvCard,.recordSection,.info,.disclaimer,.footer{width:min(100% - 1.2rem,1060px)}.nav{min-height:66px}.language button{min-height:42px;padding-inline:.65rem}.hero{padding:1.8rem 1.15rem;border-radius:21px}.hero h1{font-size:clamp(2rem,10vw,2.8rem)}.fields{grid-template-columns:1fr}.actions{display:grid;grid-template-columns:1fr}.primary,.secondary{width:100%;min-height:50px}.scheduleHead{align-items:flex-start;flex-direction:column}.scheduleHead .printButton{display:none}.stageGrid{grid-template-columns:1fr}.stageCard{padding:1.05rem}.mobilePrint{display:block;width:calc(100% - 1.2rem);margin:1rem auto 0}.recordToggle{align-items:flex-start}.recordPanel{padding:1rem}.info{grid-template-columns:1fr}.footer{flex-direction:column;gap:.7rem}}
       @media(max-width:380px){.language button{padding-inline:.5rem;font-size:.78rem}.hpvCard{flex-direction:column}.meta{flex-direction:column}.meta span{display:none}}
       @media print{@page{size:A4 portrait;margin:11mm}:global(body){background:#fff!important}.page{min-height:auto;overflow:visible;background:#fff;color:#000}.screenOnly,.info,.footer,.recordSection{display:none!important}.printOnly{display:block}.printHeader{margin-bottom:6mm;padding-bottom:3mm;border-bottom:2px solid #202650}.printHeader h1{margin:1mm 0 0;font-size:19pt}.report{margin:0}.scheduleHead,.stageGrid,.hpvCard,.disclaimer{width:100%;margin-inline:0}.scheduleHead{margin-bottom:4mm}.stageGrid{grid-template-columns:repeat(3,1fr);gap:3mm}.stageCard{padding:3mm;border:1px solid #777;border-top:3px solid var(--accent);border-radius:3mm;background:#fff;box-shadow:none;break-inside:avoid}.dateBlock{margin:2mm 0;padding:2mm;background:#fff;border:1px solid #aaa}.stageCard li{font-size:8pt}.stageCard li small{font-size:6.5pt}.hpvCard{margin-top:4mm;padding:3mm;border:1px solid #777;border-radius:3mm;background:#fff;box-shadow:none}.disclaimer{margin-top:5mm;margin-bottom:0;padding:3mm;border:1px solid #777;border-radius:2mm;background:#fff;break-inside:avoid}.disclaimer>span{display:none}.disclaimer p{color:#222;font-size:7.5pt}}
+      .officialReferences{width:min(1060px,calc(100% - 2rem));margin:1rem auto 0;padding:1rem 1.2rem;border:1px solid #dfe3ec;border-radius:16px;background:#fff}.officialReferences h2{margin:0;color:#252b56;font-size:1rem}.officialReferences p{margin:.4rem 0;color:#626a80;font-size:.82rem;line-height:1.55}.officialReferences ul{display:grid;gap:.4rem;margin:.7rem 0 0;padding-left:1.2rem}.officialReferences a{color:#343878;font-size:.82rem;font-weight:750;text-underline-offset:3px}@media(max-width:600px){.officialReferences{width:min(100% - 1.2rem,1060px)}}@media print{.officialReferences{width:100%;margin:4mm 0 0;padding:2.5mm;border:1px solid #777;border-radius:2mm;break-inside:avoid}.officialReferences h2{font-size:9pt}.officialReferences p,.officialReferences a{color:#222;font-size:7pt}.officialReferences ul{gap:1mm;margin:2mm 0 0;padding-left:4mm}}
     `}</style>
   </main>;
 }
