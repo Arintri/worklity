@@ -81,10 +81,13 @@ export default function PrivacyPolicy() {
         <h2>Children&apos;s privacy</h2>
 
         <p>
-          Worklity does not intentionally request personal information
-          from children through its currently available calculators.
-          Users should avoid entering unnecessary personal or sensitive
-          information into online tools.
+          The Vaccination Calculator requires a child&apos;s date of birth
+          to generate a schedule and may also accept the child&apos;s name
+          as an optional report detail. These calculator inputs are
+          processed in the current browser page session and are not
+          saved by Worklity&apos;s calculator. Users should avoid entering
+          unnecessary personal or sensitive information into online
+          tools.
         </p>
 
         <h2>Changes to this policy</h2>
@@ -99,9 +102,11 @@ export default function PrivacyPolicy() {
         <h2>Contact</h2>
 
         <p>
-          A dedicated Worklity contact method will be provided on the
-          website. Privacy-related questions can then be submitted
-          through that contact method.
+          You can contact Worklity through the <Link href="/contact">Contact page</Link>
+          {" "}or by email at{" "}
+          <a href="mailto:worklity.contact@gmail.com">
+            worklity.contact@gmail.com
+          </a>.
         </p>
       </section>
 
