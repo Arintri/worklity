@@ -241,11 +241,11 @@ export default function LandAreaCalculatorClient() {
         </section>
 
         <aside className="unitGuide">
-          <h3>
+          <h2>
             {bn
               ? "পশ্চিমবঙ্গের জমির প্রচলিত একক"
               : "West Bengal Land Units"}
-          </h3>
+          </h2>
 
           <p>
             {bn
@@ -369,6 +369,51 @@ export default function LandAreaCalculatorClient() {
               ? "নোট: কাঠা ও বিঘার মাপ অঞ্চল ও স্থানীয় রীতি অনুযায়ী ভিন্ন হতে পারে।"
               : "Note: Katha and Bigha measurements can vary by region and local practice."}
           </small>
+        </p>
+
+        <h2>
+          {bn
+            ? "জমির ক্ষেত্রফল রূপান্তরের সূত্র"
+            : "Land Area Conversion Formulas"}
+        </h2>
+
+        <div className="formulaList">
+          <p>
+            <span>{bn ? "স্কয়ার ফিট → ডেসিমেল" : "Square Feet → Decimal"}</span>
+            <b>{bn ? "ডেসিমেল = স্কয়ার ফিট ÷ ৪৩৫.৬" : "Decimal = Square Feet ÷ 435.6"}</b>
+          </p>
+          <p>
+            <span>{bn ? "স্কয়ার ফিট → পশ্চিমবঙ্গের কাঠা" : "Square Feet → West Bengal Katha"}</span>
+            <b>{bn ? "কাঠা = স্কয়ার ফিট ÷ ৭২০" : "Katha = Square Feet ÷ 720"}</b>
+          </p>
+          <p>
+            <span>{bn ? "স্কয়ার ফিট → পশ্চিমবঙ্গের বিঘা" : "Square Feet → West Bengal Bigha"}</span>
+            <b>{bn ? "বিঘা = স্কয়ার ফিট ÷ ১৪,৪০০" : "Bigha = Square Feet ÷ 14,400"}</b>
+          </p>
+          <p>
+            <span>{bn ? "বিঘা → কাঠা" : "Bigha → Katha"}</span>
+            <b>{bn ? "কাঠা = বিঘা × ২০" : "Katha = Bigha × 20"}</b>
+          </p>
+          <p>
+            <span>{bn ? "একর → স্কয়ার ফিট" : "Acre → Square Feet"}</span>
+            <b>{bn ? "স্কয়ার ফিট = একর × ৪৩,৫৬০" : "Square Feet = Acre × 43,560"}</b>
+          </p>
+        </div>
+
+        <p className="conversionBasis">
+          {bn
+            ? "জমির প্রচলিত এককের মান এলাকা ও তথ্যসূত্রভেদে ভিন্ন হতে পারে। এই ক্যালকুলেটরে হিসাবের জন্য ১ ডেসিমেল = ৪৩৫.৬ স্কয়ার ফিট, ১ কাঠা = ৭২০ স্কয়ার ফিট এবং ১ বিঘা = ১৪,৪০০ স্কয়ার ফিট ব্যবহার করা হয়েছে। পশ্চিমবঙ্গের ডিরেক্টরেট অব রেজিস্ট্রেশন অ্যান্ড স্ট্যাম্প রেভিনিউ-এর FAQ-তে ১ কাঠা = ৭২০ স্কয়ার ফিট ও ১ বিঘা = ১৪,৪০০ স্কয়ার ফিটসহ প্রচলিত সম্পর্ক দেওয়া আছে; সেখানে ডেসিমেলের আনুমানিক মান সামান্য আলাদা। সরকারি জমির রেকর্ড, দলিল, রেজিস্ট্রেশন বা আইনি পরিমাপের জন্য প্রযোজ্য স্থানীয় বা সরকারি রেকর্ড যাচাই করুন।"
+            : "Traditional land-unit values can vary by locality and reference source. This calculator uses 1 Decimal = 435.6 sq ft, 1 Katha = 720 sq ft, and 1 Bigha = 14,400 sq ft for its calculations. The West Bengal Directorate of Registration and Stamp Revenue FAQ lists commonly used relationships including 1 Katha = 720 sq ft and 1 Bigha = 14,400 sq ft, while its approximate Decimal figure differs slightly. For official land records, deeds, registration, or legal measurement, verify the applicable local or official record."}
+          {" "}
+          <a
+            href="https://wbregistration.gov.in/faq.aspx"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {bn
+              ? "পশ্চিমবঙ্গ ডিরেক্টরেট অব রেজিস্ট্রেশন অ্যান্ড স্ট্যাম্প রেভিনিউ – জমি পরিমাপ FAQ"
+              : "West Bengal Directorate of Registration and Stamp Revenue – Land Measurement FAQ"}
+          </a>
         </p>
 
         <h2>{bn ? "উদাহরণসহ হিসাব" : "Example Calculation"}</h2>
@@ -820,7 +865,7 @@ export default function LandAreaCalculatorClient() {
           content: "⌗";
         }
 
-        .unitGuide h3 {
+        .unitGuide h2 {
           margin: 0;
           color: var(--navy);
           font-size: 23px;
@@ -888,6 +933,47 @@ export default function LandAreaCalculatorClient() {
           margin: 0 0 13px;
           color: var(--muted);
           line-height: 1.72;
+        }
+
+        .formulaList {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+          margin: 16px 0;
+        }
+
+        .formulaList p {
+          display: grid;
+          gap: 5px;
+          margin: 0;
+          padding: 14px;
+          border: 1px solid var(--line);
+          border-radius: 12px;
+          background: #fafbff;
+        }
+
+        .formulaList span {
+          color: var(--muted);
+          font-size: 0.82rem;
+        }
+
+        .formulaList b {
+          color: #263267;
+          line-height: 1.5;
+        }
+
+        .conversionBasis {
+          padding: 14px 16px;
+          border-left: 3px solid var(--cyan);
+          border-radius: 0 10px 10px 0;
+          background: #f2fafb;
+          font-size: 0.88rem;
+        }
+
+        .conversionBasis a {
+          color: #225f8d;
+          font-weight: 700;
+          text-underline-offset: 3px;
         }
 
         .tableScroll {
@@ -1007,6 +1093,10 @@ export default function LandAreaCalculatorClient() {
           .inputs,
           .results,
           .explain > .results {
+            grid-template-columns: 1fr;
+          }
+
+          .formulaList {
             grid-template-columns: 1fr;
           }
 
