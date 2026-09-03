@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import ToolTabs from "./components/ToolTabs";
 
 export default function Home() {
   const [lang, setLang] = useState("en");
@@ -194,6 +195,8 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      <ToolTabs language={lang} />
 
       <section className="homeHero">
         <div className="heroContent">

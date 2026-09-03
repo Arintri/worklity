@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import ToolTabs from "../components/ToolTabs";
 import {
   PREGNANCY_LENGTH_DAYS,
   calculateEDDDetails,
@@ -132,6 +133,8 @@ export default function EDDCalculatorClient() {
           </Link>
         </div>
       </header>
+
+      <ToolTabs language={lang} />
 
       <section className="eddHero">
         <span>{bn ? "গর্ভাবস্থার তারিখের টুল" : "PREGNANCY DATE TOOL"}</span>

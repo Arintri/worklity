@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import ToolTabs from "../components/ToolTabs";
 import { generateVaccinationSchedule } from "./vaccinationCalculations.mjs";
 import {
   GENDER,
@@ -169,6 +170,7 @@ export default function VaccinationCalculatorClient() {
         <button type="button" aria-pressed={language === "bn"} onClick={() => setLanguage("bn")}>বাংলা</button>
       </div>
     </header>
+    <ToolTabs language={language} />
     <section className="hero screenOnly"><i className="glow" aria-hidden="true" /><p className="eyebrow">{t.eyebrow}</p><h1>{t.title}</h1><p>{t.subtitle}</p></section>
     <section className="inputCard screenOnly" aria-label={t.title}>
       <form onSubmit={submit} noValidate>

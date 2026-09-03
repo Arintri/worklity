@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import ToolTabs from "../components/ToolTabs";
 
 const factor = {
   ft: 0.3048,
@@ -98,6 +99,8 @@ export default function LandAreaCalculatorClient() {
           </Link>
         </div>
       </header>
+
+      <ToolTabs language={lang} />
 
       <section className="toolHero">
         <b>{bn ? "জমি ও ক্ষেত্রফল" : "LAND & AREA"}</b>

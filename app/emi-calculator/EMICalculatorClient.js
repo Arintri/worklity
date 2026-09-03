@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import ToolTabs from "../components/ToolTabs";
 
 import {
   MAX_ANNUAL_INTEREST_RATE,
@@ -200,6 +201,8 @@ export default function EMICalculatorClient() {
           </Link>
         </div>
       </header>
+
+      <ToolTabs language={lang} />
 
       <section className="emiHero">
         <span>{bn ? "ঋণ ও EMI" : "LOAN & EMI"}</span>

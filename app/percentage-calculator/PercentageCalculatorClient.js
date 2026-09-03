@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import ToolTabs from "../components/ToolTabs";
 
 const fmt = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -134,6 +135,8 @@ export default function PercentageCalculatorClient() {
           <Link href="/">{bn ? "← হোম" : "← Home"}</Link>
         </div>
       </header>
+
+      <ToolTabs language={lang} />
 
       <section className="toolHero">
         <b>{bn ? "টাকা ও হিসাব" : "FINANCE"}</b>

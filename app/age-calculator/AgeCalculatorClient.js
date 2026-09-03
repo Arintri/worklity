@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import ToolTabs from "../components/ToolTabs";
 import {
   calculateAgeDetails,
   isValidDate,
@@ -99,6 +100,8 @@ export default function AgeCalculatorClient() {
           </Link>
         </div>
       </header>
+
+      <ToolTabs language={lang} />
 
       <section className="toolHero ageHero">
         <b>{bn ? "তারিখ ও সময়" : "DATE & TIME"}</b>
