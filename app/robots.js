@@ -4,5 +4,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
+    sitemap: "https://worklity.in/sitemap.xml",
   };
 }

@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://worklity-ten.vercel.app";
+  const baseUrl = "https://worklity.in";
 
   return [
     {

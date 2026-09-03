@@ -6,6 +6,22 @@ export const metadata = {
   },
   description:
     "Use this free calculator to calculate a percentage of a number, find what percentage one number is of another, or calculate percentage increase and decrease.",
+  alternates: {
+    canonical: "/percentage-calculator",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Worklity",
+    title: "Percentage Calculator - Percentage, Increase & Decrease",
+    description:
+      "Use this free calculator to calculate a percentage of a number, find what percentage one number is of another, or calculate percentage increase and decrease.",
+    url: "/percentage-calculator",
+  },
+  twitter: {
+    title: "Percentage Calculator - Percentage, Increase & Decrease",
+    description:
+      "Use this free calculator to calculate a percentage of a number, find what percentage one number is of another, or calculate percentage increase and decrease.",
+  },
 };
 
 export default function Page() {

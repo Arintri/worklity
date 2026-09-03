@@ -1,9 +1,25 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Privacy Policy | Worklity",
+  title: "Privacy Policy",
   description:
     "Privacy Policy for Worklity free online calculators and utility tools.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Worklity",
+    title: "Privacy Policy",
+    description:
+      "Privacy Policy for Worklity free online calculators and utility tools.",
+    url: "/privacy-policy",
+  },
+  twitter: {
+    title: "Privacy Policy",
+    description:
+      "Privacy Policy for Worklity free online calculators and utility tools.",
+  },
 };
 
 export default function PrivacyPolicy() {

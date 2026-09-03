@@ -1,9 +1,25 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Disclaimer | Worklity",
+  title: "Disclaimer",
   description:
     "Important information and disclaimers for Worklity calculators, tools and content.",
+  alternates: {
+    canonical: "/disclaimer",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Worklity",
+    title: "Disclaimer",
+    description:
+      "Important information and disclaimers for Worklity calculators, tools and content.",
+    url: "/disclaimer",
+  },
+  twitter: {
+    title: "Disclaimer",
+    description:
+      "Important information and disclaimers for Worklity calculators, tools and content.",
+  },
 };
 
 export default function DisclaimerPage() {

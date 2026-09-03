@@ -4,6 +4,22 @@ export const metadata = {
   title: "Contact Worklity",
   description:
     "Contact Worklity for questions, feedback, tool suggestions and practical data or spreadsheet services.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Worklity",
+    title: "Contact Worklity",
+    description:
+      "Contact Worklity for questions, feedback, tool suggestions and practical data or spreadsheet services.",
+    url: "/contact",
+  },
+  twitter: {
+    title: "Contact Worklity",
+    description:
+      "Contact Worklity for questions, feedback, tool suggestions and practical data or spreadsheet services.",
+  },
 };
 
 export default function ContactPage() {

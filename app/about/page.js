@@ -4,6 +4,22 @@ export const metadata = {
   title: "About Worklity",
   description:
     "Learn about Worklity — simple, free online calculators and practical tools for everyday work.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Worklity",
+    title: "About Worklity",
+    description:
+      "Learn about Worklity — simple, free online calculators and practical tools for everyday work.",
+    url: "/about",
+  },
+  twitter: {
+    title: "About Worklity",
+    description:
+      "Learn about Worklity — simple, free online calculators and practical tools for everyday work.",
+  },
 };
 
 export default function AboutPage() {

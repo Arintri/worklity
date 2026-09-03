@@ -1,6 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
+  metadataBase: new URL("https://worklity.in"),
   title: {
     default: "Worklity | Simple Tools. Smarter Work.",
     template: "%s | Worklity",
@@ -29,6 +30,9 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: "/",
+  },
 verification: {
   google: "m5K_NDh2xxLNWb9Jd0N2JdpkLmDGePn6SzXJu3XXZAs",
 },
@@ -38,6 +42,7 @@ verification: {
     title: "Worklity | Simple Tools. Smarter Work.",
     description:
       "Free practical online calculators and utility tools for everyday work.",
+    url: "/",
   },
 
   twitter: {
