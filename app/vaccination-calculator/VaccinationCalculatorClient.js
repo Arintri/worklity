@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import ToolTabs from "../components/ToolTabs";
 import { generateVaccinationSchedule } from "./vaccinationCalculations.mjs";
@@ -164,7 +165,7 @@ export default function VaccinationCalculatorClient() {
 
   return <main className={`page ${language === "bn" ? "bengali" : ""}`}>
     <header className="nav screenOnly">
-      <Link href="/" className="brand" aria-label="Worklity home"><span>W</span>Worklity</Link>
+      <Link href="/" className="brand" aria-label="Worklity home"><Image src="/brand/worklity-mark.png" alt="" width={40} height={40} style={{ display: "block", flex: "0 0 40px", width: 40, height: 40, objectFit: "contain" }} />Worklity</Link>
       <div className="language" role="group" aria-label={t.language}>
         <button type="button" aria-pressed={language === "en"} onClick={() => setLanguage("en")}>English</button>
         <button type="button" aria-pressed={language === "bn"} onClick={() => setLanguage("bn")}>বাংলা</button>

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import ToolTabs from "../components/ToolTabs";
 import {
   calculateAgeDetails,
@@ -68,7 +69,7 @@ export default function AgeCalculatorClient() {
     <main className="agePage">
       <header className="nav ageNav">
         <Link className="brand ageBrand" href="/">
-          <span>W</span>
+          <Image src="/brand/worklity-mark.png" alt="" width={40} height={40} style={{ display: "block", flex: "0 0 40px", width: 40, height: 40, objectFit: "contain" }} />
           Worklity
         </Link>
 

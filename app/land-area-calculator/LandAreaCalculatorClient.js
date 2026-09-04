@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import ToolTabs from "../components/ToolTabs";
 
 const factor = {
@@ -67,7 +68,7 @@ export default function LandAreaCalculatorClient() {
     <main className="landPage">
       <header className="landNav">
         <Link className="landBrand" href="/">
-          <span>W</span>
+          <Image src="/brand/worklity-mark.png" alt="" width={40} height={40} style={{ display: "block", flex: "0 0 40px", width: 40, height: 40, objectFit: "contain" }} />
           Worklity
         </Link>
 

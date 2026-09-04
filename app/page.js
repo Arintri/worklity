@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import ToolTabs from "./components/ToolTabs";
 
 export default function Home() {
@@ -163,7 +164,7 @@ export default function Home() {
     <main className="homePage">
       <header className="homeHeader">
         <Link className="homeBrand" href="/" aria-label="Worklity home">
-          <span>W</span>
+          <Image className="headerBrandMark" src="/brand/worklity-mark.png" alt="" width={40} height={40} />
           Worklity
         </Link>
 
@@ -397,6 +398,14 @@ export default function Home() {
           color: #fff;
           background: linear-gradient(145deg, var(--indigo), var(--violet));
           box-shadow: 0 9px 22px rgba(72, 58, 153, 0.22);
+        }
+
+        :global(.headerBrandMark) {
+          display: block;
+          flex: 0 0 40px;
+          width: 40px;
+          height: 40px;
+          object-fit: contain;
         }
 
         .headerActions,

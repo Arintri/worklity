@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "Privacy Policy",
@@ -27,7 +28,7 @@ export default function PrivacyPolicy() {
     <main>
       <header className="nav">
         <Link className="brand" href="/">
-          <span>W</span>
+          <Image src="/brand/worklity-mark.png" alt="" width={40} height={40} style={{ display: "block", flex: "0 0 40px", width: 40, height: 40, objectFit: "contain" }} />
           Worklity
         </Link>
 

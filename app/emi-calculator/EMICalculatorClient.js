@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import ToolTabs from "../components/ToolTabs";
 
 import {
@@ -168,7 +169,7 @@ export default function EMICalculatorClient() {
     <main className="emiPage">
       <header className="emiNav">
         <Link className="emiBrand" href="/" aria-label="Worklity home">
-          <span>W</span>
+          <Image src="/brand/worklity-mark.png" alt="" width={40} height={40} style={{ display: "block", flex: "0 0 40px", width: 40, height: 40, objectFit: "contain" }} />
           Worklity
         </Link>
 
