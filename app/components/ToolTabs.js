@@ -34,6 +34,13 @@ const TOOLS = [
     descriptionBn: "প্রসবের সম্ভাব্য তারিখ",
   },
   {
+    href: "/bmi-calculator",
+    en: "BMI",
+    bn: "BMI",
+    descriptionEn: "Adult weight & health",
+    descriptionBn: "বড়দের ওজন ও স্বাস্থ্য",
+  },
+  {
     href: "/vaccination-calculator",
     en: "Vaccination",
     bn: "টিকাদান",

@@ -38,6 +38,11 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/bmi-calculator`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/about`,
       changeFrequency: "monthly",
       priority: 0.6,
