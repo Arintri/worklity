@@ -59,8 +59,17 @@ export default function AboutPage() {
 
         <p>
           Worklity includes tools for land and area calculations,
-          percentages, age and dates, and other everyday needs.
-          More useful tools will be added over time.
+          percentages, age and dates, loan EMI, pregnancy due dates,
+          adult BMI and child vaccination schedules. More useful tools
+          will be added over time.
+        </p>
+
+        <p>
+          Health-related tools are provided for general information and
+          planning only. They include clear limitations and, where
+          relevant, links to the official references used. They do not
+          replace advice from a qualified healthcare professional or an
+          official health record.
         </p>
 
         <h2>Why Worklity?</h2>
