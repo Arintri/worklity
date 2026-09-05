@@ -223,8 +223,8 @@ export default function Home() {
 
           <p>
             {bn
-              ? "জমির মাপ, শতাংশ, বয়স, EMI, EDD, প্রাপ্তবয়স্কদের BMI ও শিশুর টিকাদানের সময়সূচি সহজে হিসাব করুন।"
-              : "Free calculators for land area, percentages, age, EMI, pregnancy due dates, adult BMI and child vaccination schedules."
+              ? "জমির মাপ, শতাংশ ও বয়সের হিসাব সহজে করুন। অফিস ও ডাটার কাজেও সহায়তা নিন।"
+              : "Free calculators for land area, percentages and age, plus practical help for office and data work."}
           </p>
 
           <div className="heroActions">

@@ -47,7 +47,7 @@ export default function PrivacyPolicy() {
 
       <section className="explain">
         <p>
-          <b>Last updated: September 5, 2026</b>
+          <b>Last updated: August 30, 2026</b>
         </p>
 
         <h2>Information you enter into our tools</h2>
@@ -81,32 +81,10 @@ export default function PrivacyPolicy() {
         <h2>Cookies, analytics and advertising</h2>
 
         <p>
-          Worklity does not currently use third-party advertising on its
-          calculator pages. We may introduce analytics, advertising or
-          other third-party services in the future. This Privacy Policy
-          will be updated when those services are enabled.
-        </p>
-
-        <p>
-          If Google AdSense or another advertising service is enabled,
-          third-party vendors, including Google, may use cookies to serve
-          ads based on a user&apos;s previous visits to Worklity or other
-          websites. Google&apos;s advertising cookies allow Google and its
-          partners to serve personalized or non-personalized ads. Users
-          can manage or opt out of personalized advertising through
-          Google&apos;s{" "}
-          <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer">
-            Ads Settings
-          </a>.
-        </p>
-
-        <p>
-          Advertising providers may place or read cookies in a user&apos;s
-          browser, or use web beacons, IP addresses and similar
-          identifiers as a result of ad serving. Learn more about{" "}
-          <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">
-            how Google uses information from sites or apps that use its services
-          </a>.
+          Worklity may introduce analytics, advertising or other
+          third-party services in the future. If such services are
+          added, this Privacy Policy will be updated to explain their
+          use where appropriate.
         </p>
 
         <h2>External links</h2>
