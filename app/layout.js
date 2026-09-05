@@ -26,6 +26,9 @@ export const metadata = {
   authors: [{ name: "Worklity" }],
   creator: "Worklity",
   publisher: "Worklity",
+  other: {
+    "google-adsense-account": "ca-pub-3771343820567497",
+  },
 
   robots: {
     index: true,
