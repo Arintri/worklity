@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata = {
   metadataBase: new URL("https://worklity.in"),
@@ -56,6 +57,12 @@ verification: {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3771343820567497"
+        crossOrigin="anonymous"
+        strategy="beforeInteractive"
+      />
       <body>{children}</body>
     </html>
   );
