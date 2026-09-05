@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ToolTabs from "../components/ToolTabs";
+import TrustLinks from "../components/TrustLinks";
 import {
   calculateAgeDetails,
   isValidDate,
@@ -389,6 +390,8 @@ export default function AgeCalculatorClient() {
             : "No. The result is informational. Official requirements should use accepted documents, official records, and the applicable rules."}
         </p>
       </section>
+
+      <TrustLinks language={lang} />
 
       <style jsx>{`
         .agePage {

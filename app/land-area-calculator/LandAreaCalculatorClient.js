@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ToolTabs from "../components/ToolTabs";
+import TrustLinks from "../components/TrustLinks";
 
 const factor = {
   ft: 0.3048,
@@ -536,6 +537,8 @@ export default function LandAreaCalculatorClient() {
             : "Use it for general calculations and estimates. For registration or important property matters, rely on official records and measurements from a qualified professional."}
         </p>
       </section>
+
+      <TrustLinks language={lang} />
 
       <style jsx>{`
         .landPage {

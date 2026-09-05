@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ToolTabs from "../components/ToolTabs";
+import TrustLinks from "../components/TrustLinks";
 
 const fmt = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -478,6 +479,7 @@ export default function PercentageCalculatorClient() {
             : "Percentage points show the direct difference between two percentage rates. Percentage change shows the relative change from the original rate."}
         </p>
       </section>
+      <TrustLinks language={lang} />
     </main>
   );
 }

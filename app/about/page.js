@@ -50,17 +50,30 @@ export default function AboutPage() {
 
         <p>
           Worklity is a growing collection of free online calculators
-          and practical utility tools. Our goal is to provide useful
-          tools with a clean interface, simple instructions and no
-          unnecessary complexity.
+          and practical utility tools for everyday calculations,
+          measurements, finance, dates and health awareness. Our goal
+          is to provide useful tools with a clean interface, simple
+          instructions and no unnecessary complexity.
         </p>
 
         <h2>What can you find here?</h2>
 
         <p>
-          Worklity includes tools for land and area calculations,
-          percentages, age and dates, and other everyday needs.
-          More useful tools will be added over time.
+          Current tools include Land Area, Percentage, Age, EMI,
+          Estimated Due Date (EDD), Vaccination Due Date and adult BMI
+          calculators. Together they cover land and measurement tasks,
+          finance calculations, date and age questions, and
+          health-awareness or planning needs.
+        </p>
+
+        <h2>Independent tools website</h2>
+
+        <p>
+          Worklity is an independent tools website. It is not a
+          Government website, healthcare provider, financial institution
+          or lender. Important health, financial, legal or official
+          decisions should be verified with the appropriate qualified
+          professional or official source.
         </p>
 
         <h2>Why Worklity?</h2>

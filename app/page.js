@@ -223,8 +223,8 @@ export default function Home() {
 
           <p>
             {bn
-              ? "জমির মাপ, শতাংশ ও বয়সের হিসাব সহজে করুন। অফিস ও ডাটার কাজেও সহায়তা নিন।"
-              : "Free calculators for land area, percentages and age, plus practical help for office and data work."}
+              ? "দৈনন্দিন হিসাব, জমির মাপ, অর্থ, বয়স ও তারিখ এবং স্বাস্থ্য সচেতনতা ও পরিকল্পনার জন্য সহজ ব্যবহারিক টুল।"
+              : "Simple practical tools for everyday calculations, measurement, finance, dates and age, and health awareness or planning."}
           </p>
 
           <div className="heroActions">

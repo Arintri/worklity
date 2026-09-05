@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ToolTabs from "../components/ToolTabs";
+import TrustLinks from "../components/TrustLinks";
 import { BMI_LIMITS, BMI_CUTOFFS, calculateBMIDetails } from "./bmiCalculations.mjs";
 import { COPY, SOURCES } from "./bmiContent";
 import styles from "./BMI.module.css";
@@ -121,6 +122,7 @@ export default function BMICalculatorClient() {
       <section className={`${styles.card} ${styles.faq}`}><h2>{t.faqTitle}</h2>{t.faqs.map(([question,answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</section>
       <section className={`${styles.card} ${styles.sources}`}><h2>{t.sources}</h2><ul>{SOURCES.map(source => <li key={source.href}><a href={source.href} target="_blank" rel="noopener noreferrer">{source[lang]}</a></li>)}</ul><p>{t.sourceNote}</p></section>
       <aside className={styles.disclaimer}>{t.disclaimer}</aside>
+      <TrustLinks language={lang} />
       <footer className={styles.footer}><Link href="/">Worklity</Link><span>Simple Tools. Smarter Work.</span></footer>
     </div>
   </main>;

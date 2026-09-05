@@ -78,9 +78,12 @@ export default function DisclaimerPage() {
 
         <h2>Financial calculations</h2>
         <p>
-          Percentage and other financial calculators are general
-          calculation tools and do not constitute financial, tax,
-          investment or accounting advice.
+          Percentage and EMI calculators are general calculation tools.
+          EMI results are estimates, not lender quotations, loan offers,
+          guaranteed repayment figures or financial advice. Actual lender
+          results may differ because of rates, fees, rounding, policies
+          and other charges. These tools do not constitute financial,
+          tax, investment or accounting advice.
         </p>
 
         <h2>Date and age calculations</h2>
@@ -93,18 +96,21 @@ export default function DisclaimerPage() {
 
         <h2>Health and medical tools</h2>
         <p>
-          Any pregnancy, estimated due date, vaccination or other
-          health-related tool that may be provided by Worklity is for
-          general informational and educational purposes only. It is not
-          a diagnosis, treatment recommendation or substitute for advice
+          BMI, pregnancy/estimated due date and vaccination tools are for
+          general informational, screening-awareness or planning purposes
+          only. BMI is a screening calculation, not a diagnosis. These
+          tools do not provide treatment recommendations or replace advice
           from a doctor or other qualified healthcare professional.
         </p>
 
         <p>
-          Pregnancy dates are estimates, and vaccination recommendations
-          can vary by country, age, medical history and current official
-          guidance. Always follow advice from a qualified healthcare
-          professional and the applicable official health authority.
+          Pregnancy dates are estimates. Vaccination schedules and
+          eligibility can depend on location, medical circumstances and
+          current official guidance. EDD and vaccination information does
+          not replace professional medical advice, U-WIN, an MCP Card or
+          other official health or vaccination records. Always follow the
+          applicable official guidance and advice from a qualified
+          healthcare professional.
         </p>
 
         <h2>External links</h2>

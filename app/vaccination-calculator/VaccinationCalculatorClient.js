@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import ToolTabs from "../components/ToolTabs";
+import TrustLinks from "../components/TrustLinks";
 import { generateVaccinationSchedule } from "./vaccinationCalculations.mjs";
 import {
   GENDER,
@@ -18,6 +19,9 @@ const COPY = {
     language: "Choose language", title: "Vaccination Due Date Calculator",
     subtitle: "Enter the child's date of birth to see the vaccination schedule.",
     eyebrow: "India vaccination planning tool", childName: "Child Name", optional: "Optional",
+    overviewTitle: "Routine schedule stages covered",
+    overviewText: "The DOB-based plan covers the configured routine stages from birth through 16 years: birth; 6, 10 and 14 weeks; 9–11 and 16–24 months; 5–6 years; 10 years; and 16 years.",
+    overviewConditional: "JE is shown with its applicable/endemic-area qualification. HPV programme information is kept separate and individual eligibility must be confirmed with a vaccination centre.",
     namePlaceholder: "Enter child's name", dob: "Date of Birth", show: "Show Vaccination Schedule",
     reset: "Reset", privacy: "Information entered here stays on this page during the current session and is not saved by this calculator.",
     required: "Please enter the child's date of birth.", invalid: "Please enter a valid date of birth.", future: "Date of birth cannot be in the future.",
@@ -60,6 +64,9 @@ const COPY = {
     language: "ভাষা বেছে নিন", title: "টিকার নির্ধারিত তারিখ ক্যালকুলেটর",
     subtitle: "টিকাদান সময়সূচি দেখতে শিশুর জন্মতারিখ লিখুন।", eyebrow: "ভারতের টিকাদান পরিকল্পনা টুল",
     childName: "শিশুর নাম", optional: "ঐচ্ছিক", namePlaceholder: "শিশুর নাম লিখুন", dob: "জন্মতারিখ",
+    overviewTitle: "যে নিয়মিত সময়গুলো দেখানো হয়",
+    overviewText: "জন্মতারিখভিত্তিক পরিকল্পনায় জন্ম থেকে ১৬ বছর পর্যন্ত কনফিগার করা নিয়মিত সময়গুলো রয়েছে: জন্ম; ৬, ১০ ও ১৪ সপ্তাহ; ৯–১১ ও ১৬–২৪ মাস; ৫–৬ বছর; ১০ বছর; এবং ১৬ বছর।",
+    overviewConditional: "JE টিকা প্রযোজ্য/এন্ডেমিক এলাকার শর্তসহ দেখানো হয়। HPV কর্মসূচির তথ্য আলাদা রাখা হয়েছে এবং ব্যক্তিগত যোগ্যতা টিকাদান কেন্দ্র থেকে নিশ্চিত করতে হবে।",
     show: "টিকাদান সময়সূচি দেখুন", reset: "রিসেট",
     privacy: "এখানে দেওয়া তথ্য বর্তমান সেশনে এই পেজেই থাকে; এই ক্যালকুলেটর তথ্য সংরক্ষণ করে না।",
     required: "শিশুর জন্মতারিখ লিখুন।", invalid: "সঠিক জন্মতারিখ লিখুন।", future: "জন্মতারিখ ভবিষ্যতের হতে পারে না।",
@@ -173,6 +180,11 @@ export default function VaccinationCalculatorClient() {
     </header>
     <ToolTabs language={language} />
     <section className="hero screenOnly"><i className="glow" aria-hidden="true" /><p className="eyebrow">{t.eyebrow}</p><h1>{t.title}</h1><p>{t.subtitle}</p></section>
+    <section className="staticOverview screenOnly" aria-labelledby="routine-overview-title">
+      <h2 id="routine-overview-title">{t.overviewTitle}</h2>
+      <p>{t.overviewText}</p>
+      <p>{t.overviewConditional}</p>
+    </section>
     <section className="inputCard screenOnly" aria-label={t.title}>
       <form onSubmit={submit} noValidate>
         <div className="fields">
@@ -218,6 +230,7 @@ export default function VaccinationCalculatorClient() {
       </ul>
     </section>
     <aside className="disclaimer"><span aria-hidden="true">i</span><div><h2>{t.important}</h2><p>{t.disclaimer}</p><small>{t.reviewed}</small></div></aside>
+    <TrustLinks language={language} />
     <footer className="footer screenOnly"><Link href="/">Worklity</Link><span>Simple Tools. Smarter Work.</span></footer>
 
     <style jsx>{`
@@ -226,7 +239,7 @@ export default function VaccinationCalculatorClient() {
       @media(max-width:600px){.nav,.hero,.inputCard,.scheduleHead,.stageGrid,.hpvCard,.recordSection,.info,.disclaimer,.footer{width:min(100% - 1.2rem,1060px)}.nav{min-height:66px}.language button{min-height:42px;padding-inline:.65rem}.hero{padding:1.8rem 1.15rem;border-radius:21px}.hero h1{font-size:clamp(2rem,10vw,2.8rem)}.fields{grid-template-columns:1fr}.actions{display:grid;grid-template-columns:1fr}.primary,.secondary{width:100%;min-height:50px}.scheduleHead{align-items:flex-start;flex-direction:column}.scheduleHead .printButton{display:none}.stageGrid{grid-template-columns:1fr}.stageCard{padding:1.05rem}.mobilePrint{display:block;width:calc(100% - 1.2rem);margin:1rem auto 0}.recordToggle{align-items:flex-start}.recordPanel{padding:1rem}.info{grid-template-columns:1fr}.footer{flex-direction:column;gap:.7rem}}
       @media(max-width:380px){.language button{padding-inline:.5rem;font-size:.78rem}.hpvCard{flex-direction:column}.meta{flex-direction:column}.meta span{display:none}}
       @media print{@page{size:A4 portrait;margin:11mm}:global(body){background:#fff!important}.page{min-height:auto;overflow:visible;background:#fff;color:#000}.screenOnly,.info,.footer,.recordSection{display:none!important}.printOnly{display:block}.printHeader{margin-bottom:6mm;padding-bottom:3mm;border-bottom:2px solid #202650}.printHeader h1{margin:1mm 0 0;font-size:19pt}.report{margin:0}.scheduleHead,.stageGrid,.hpvCard,.disclaimer{width:100%;margin-inline:0}.scheduleHead{margin-bottom:4mm}.stageGrid{grid-template-columns:repeat(3,1fr);gap:3mm}.stageCard{padding:3mm;border:1px solid #777;border-top:3px solid var(--accent);border-radius:3mm;background:#fff;box-shadow:none;break-inside:avoid}.dateBlock{margin:2mm 0;padding:2mm;background:#fff;border:1px solid #aaa}.stageCard li{font-size:8pt}.stageCard li small{font-size:6.5pt}.hpvCard{margin-top:4mm;padding:3mm;border:1px solid #777;border-radius:3mm;background:#fff;box-shadow:none}.disclaimer{margin-top:5mm;margin-bottom:0;padding:3mm;border:1px solid #777;border-radius:2mm;background:#fff;break-inside:avoid}.disclaimer>span{display:none}.disclaimer p{color:#222;font-size:7.5pt}}
-      .officialReferences{width:min(1060px,calc(100% - 2rem));margin:1rem auto 0;padding:1rem 1.2rem;border:1px solid #dfe3ec;border-radius:16px;background:#fff}.officialReferences h2{margin:0;color:#252b56;font-size:1rem}.officialReferences p{margin:.4rem 0;color:#626a80;font-size:.82rem;line-height:1.55}.officialReferences ul{display:grid;gap:.4rem;margin:.7rem 0 0;padding-left:1.2rem}.officialReferences a{color:#343878;font-size:.82rem;font-weight:750;text-underline-offset:3px}@media(max-width:600px){.officialReferences{width:min(100% - 1.2rem,1060px)}}@media print{.officialReferences{width:100%;margin:4mm 0 0;padding:2.5mm;border:1px solid #777;border-radius:2mm;break-inside:avoid}.officialReferences h2{font-size:9pt}.officialReferences p,.officialReferences a{color:#222;font-size:7pt}.officialReferences ul{gap:1mm;margin:2mm 0 0;padding-left:4mm}}
+      .staticOverview{width:min(1060px,calc(100% - 2rem));margin:0 auto 1rem;padding:1rem 1.2rem;border:1px solid #dfe3ec;border-radius:16px;background:#fff}.staticOverview h2{margin:0;color:#252b56;font-size:1rem}.staticOverview p{margin:.4rem 0 0;color:#626a80;font-size:.86rem;line-height:1.6}.officialReferences{width:min(1060px,calc(100% - 2rem));margin:1rem auto 0;padding:1rem 1.2rem;border:1px solid #dfe3ec;border-radius:16px;background:#fff}.officialReferences h2{margin:0;color:#252b56;font-size:1rem}.officialReferences p{margin:.4rem 0;color:#626a80;font-size:.82rem;line-height:1.55}.officialReferences ul{display:grid;gap:.4rem;margin:.7rem 0 0;padding-left:1.2rem}.officialReferences a{color:#343878;font-size:.82rem;font-weight:750;text-underline-offset:3px}@media(max-width:600px){.staticOverview,.officialReferences{width:min(100% - 1.2rem,1060px)}}@media print{.officialReferences{width:100%;margin:4mm 0 0;padding:2.5mm;border:1px solid #777;border-radius:2mm;break-inside:avoid}.officialReferences h2{font-size:9pt}.officialReferences p,.officialReferences a{color:#222;font-size:7pt}.officialReferences ul{gap:1mm;margin:2mm 0 0;padding-left:4mm}}
     `}</style>
   </main>;
 }
