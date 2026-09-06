@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ToolTabs from "./components/ToolTabs";
+import ToolBannerCarousel from "./components/ToolBannerCarousel";
 
 export default function Home() {
   const [lang, setLang] = useState("en");
@@ -212,6 +213,8 @@ export default function Home() {
       </header>
 
       <ToolTabs language={lang} />
+
+      <ToolBannerCarousel />
 
       <section className="homeHero">
         <div className="heroContent">
