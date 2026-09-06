@@ -47,7 +47,7 @@ export default function PrivacyPolicy() {
 
       <section className="explain">
         <p>
-          <b>Last updated: September 5, 2026</b>
+          <b>Last updated: September 6, 2026</b>
         </p>
 
         <h2>Information you enter into our tools</h2>
@@ -135,14 +135,93 @@ export default function PrivacyPolicy() {
           according to their own policies.
         </p>
 
-        <h2>Cookies, analytics and advertising</h2>
+        <h2>Google AdSense and advertising</h2>
 
         <p>
-          Worklity may introduce analytics, advertising or other
-          third-party services in the future. If such services are
-          added, this Privacy Policy will be updated to explain their
-          use where appropriate.
+          Worklity has integrated Google AdSense advertising technology
+          for site verification and preparation to use Google&apos;s
+          advertising services. Worklity&apos;s use of AdSense remains
+          subject to Google&apos;s site review, approval and applicable
+          settings. This does not mean that live advertisements are
+          currently being displayed or that AdSense approval has been
+          granted.
         </p>
+
+        <p>
+          Google and, where applicable, its advertising partners may use
+          cookies, browser or device identifiers, IP addresses, page URLs,
+          web beacons or similar technologies in connection with
+          advertising services. As applicable, this information may be
+          used to deliver advertising services, measure advertising
+          effectiveness, prevent fraud and abuse, support security, and
+          provide personalized or non-personalized advertising depending
+          on user consent, settings, eligibility and applicable law.
+        </p>
+
+        <p>
+          This advertising-related processing is separate from the
+          calculator inputs described above. Worklity does not
+          intentionally send BMI, EDD, vaccination, EMI or other
+          calculator values to Google for the purpose of calculating
+          results.
+        </p>
+
+        <h2>Cookies and advertising technologies</h2>
+
+        <p>
+          Cookies and similar technologies can store or access information
+          on a browser or device. When advertisements are served and
+          personalized advertising is permitted, third-party vendors,
+          including Google, may use cookies to serve ads based on a
+          user&apos;s previous visits to Worklity and/or other websites.
+          Whether personalized or non-personalized advertising is used can
+          depend on consent choices, account or browser settings,
+          eligibility and applicable law.
+        </p>
+
+        <h2>Advertising choices and regional consent</h2>
+
+        <p>
+          Users can review and control personalized advertising through
+          Google&apos;s advertising controls. Where required by applicable
+          law, users may be presented with privacy or consent choices
+          regarding advertising technologies before or when relevant
+          advertising features are enabled. This policy does not state
+          that a consent-management platform or consent message is
+          currently active on Worklity.
+        </p>
+
+        <h2>Official Google privacy information</h2>
+
+        <ul>
+          <li>
+            <a
+              href="https://policies.google.com/technologies/partner-sites"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              How Google uses information from sites or apps that use our services
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://myadcenter.google.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google Ads Settings / My Ad Center
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google Privacy Policy
+            </a>
+          </li>
+        </ul>
 
         <h2>External links</h2>
 
