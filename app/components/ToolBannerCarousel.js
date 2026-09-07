@@ -74,11 +74,8 @@ const BANNERS = [
   },
 ];
 
-const LOOPED_BANNERS = [BANNERS[BANNERS.length - 1], ...BANNERS, BANNERS[0]];
-
 export default function ToolBannerCarousel() {
-  const [position, setPosition] = useState(1);
-  const [transitioning, setTransitioning] = useState(true);
+  const [position, setPosition] = useState(0);
   const [userPaused, setUserPaused] = useState(false);
   const [hoverPaused, setHoverPaused] = useState(false);
   const [focusPaused, setFocusPaused] = useState(false);
@@ -87,12 +84,13 @@ export default function ToolBannerCarousel() {
   const touchStartX = useRef(null);
   const resumeTimer = useRef(null);
 
-  const activeIndex = (position - 1 + BANNERS.length) % BANNERS.length;
+  const activeIndex = position;
   const paused = userPaused || hoverPaused || focusPaused || interactionPaused;
 
   const move = useCallback((direction) => {
-    setTransitioning(true);
-    setPosition((current) => current + direction);
+    setPosition(
+      (current) => (current + direction + BANNERS.length) % BANNERS.length,
+    );
   }, []);
 
   const pauseBriefly = useCallback(() => {
@@ -116,16 +114,6 @@ export default function ToolBannerCarousel() {
   }, [move, paused, reducedMotion]);
 
   useEffect(() => () => window.clearTimeout(resumeTimer.current), []);
-
-  function handleTransitionEnd() {
-    if (position === 0) {
-      setTransitioning(false);
-      setPosition(BANNERS.length);
-    } else if (position === BANNERS.length + 1) {
-      setTransitioning(false);
-      setPosition(1);
-    }
-  }
 
   function handleTouchStart(event) {
     touchStartX.current = event.touches[0].clientX;
@@ -198,11 +186,10 @@ export default function ToolBannerCarousel() {
         onTouchEnd={handleTouchEnd}
       >
         <div
-          className={`${styles.track} ${transitioning ? styles.moving : ""}`}
+          className={`${styles.track} ${styles.moving}`}
           style={{ transform: `translateX(-${position * 100}%)` }}
-          onTransitionEnd={handleTransitionEnd}
         >
-          {LOOPED_BANNERS.map((banner, index) => {
+          {BANNERS.map((banner, index) => {
             const isActive = index === position;
             return (
               <article
@@ -255,8 +242,7 @@ export default function ToolBannerCarousel() {
             aria-label={`Show ${banner.name}`}
             aria-current={index === activeIndex ? "true" : undefined}
             onClick={() => {
-              setTransitioning(true);
-              setPosition(index + 1);
+              setPosition(index);
               pauseBriefly();
             }}
           />
