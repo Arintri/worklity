@@ -41,6 +41,13 @@ const TOOLS = [
     descriptionBn: "বড়দের ওজন ও স্বাস্থ্য",
   },
   {
+    href: "/fib-4-calculator",
+    en: "FIB-4",
+    bn: "FIB-4",
+    descriptionEn: "Liver risk",
+    descriptionBn: "লিভারের ঝুঁকি",
+  },
+  {
     href: "/vaccination-calculator",
     en: "Vaccination",
     bn: "টিকাদান",
