@@ -1,7 +1,7 @@
 import BMICalculatorClient from "./BMICalculatorClient";
 
-const title = "BMI Calculator India – Adult BMI & NCD Health Guidance";
-const description = "Calculate adult BMI for India using kg/cm or feet/inches. View Indian and WHO references, optional waist information and NCD health awareness in English or Bengali.";
+const title = "BMI Calculator India - Adult BMI, Indian & WHO Ranges";
+const description = "Use this adult BMI calculator for India with height and weight in kg/cm or feet/inches, and view separate Indian and WHO BMI reference ranges.";
 export const metadata = {
   title,
   description,

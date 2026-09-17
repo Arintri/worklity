@@ -59,11 +59,11 @@ export default function AboutPage() {
         <h2>What can you find here?</h2>
 
         <p>
-          Current tools include Land Area, Percentage, Age, EMI,
-          Estimated Due Date (EDD), Vaccination Due Date and adult BMI
-          calculators. Together they cover land and measurement tasks,
-          finance calculations, date and age questions, and
-          health-awareness or planning needs.
+          Current tools include Land Area, Length &amp; Distance,
+          Percentage, Age, EMI, Estimated Due Date (EDD), Vaccination
+          Due Date, adult BMI and FIB-4 calculators. Together they cover
+          land and measurement tasks, finance calculations, date and age
+          questions, and health-awareness or planning needs.
         </p>
 
         <h2>Independent tools website</h2>
