@@ -115,8 +115,8 @@ export default function LandAreaCalculatorClient() {
 
         <p>
           {bn
-            ? "জমির দৈর্ঘ্য ও প্রস্থ লিখুন। সঙ্গে সঙ্গে স্কয়ার ফিট, ডেসিমেল, কাঠা, বিঘা, একর সহ বিভিন্ন এককে হিসাব দেখুন।"
-            : "Enter length and width once and instantly convert land area into Square Feet, Decimal, Katha, Bigha, Acre and more."}
+            ? "এই পশ্চিমবঙ্গ জমির মাপ ক্যালকুলেটর দিয়ে স্কয়ার ফিট, ডেসিমেল, কাঠা, বিঘা ও একরের মধ্যে জমির ক্ষেত্রফল রূপান্তর করুন। পশ্চিমবঙ্গে একর থেকে কাঠা, ডেসিমেল থেকে বিঘা এবং অন্যান্য স্থানীয় জমির মাপ হিসাব করতে এটি ব্যবহার করুন।"
+            : "Use this West Bengal land measurement calculator to convert land area between Square Feet, Decimal, Katha, Bigha and Acre. It is useful for common conversions such as Acre to Katha in West Bengal, Decimal to Bigha in West Bengal, and other local land measurements."}
         </p>
       </section>
 
@@ -293,6 +293,29 @@ export default function LandAreaCalculatorClient() {
       </div>
 
       <section className="explain">
+        <h2>
+          {bn
+            ? "পশ্চিমবঙ্গের সাধারণ জমির রূপান্তর"
+            : "Common West Bengal Land Conversions"}
+        </h2>
+
+        <p>
+          {bn
+            ? "এই ক্যালকুলেটরে ব্যবহৃত একই রূপান্তর মান অনুযায়ী:"
+            : "Using the same conversion values as the calculator:"}
+        </p>
+
+        <ul className="quickConversions">
+          <li>{bn ? "১ একর = ৬০.৫ কাঠা" : "1 Acre = 60.5 Katha"}</li>
+          <li>{bn ? "১ একর = ১০০ ডেসিমেল" : "1 Acre = 100 Decimal"}</li>
+          <li>{bn ? "১ বিঘা = ২০ কাঠা" : "1 Bigha = 20 Katha"}</li>
+          <li>
+            {bn
+              ? "উদাহরণ: উপরের ক্যালকুলেটর ব্যবহার করে ০.০৩ একরকে কাঠায় রূপান্তর করা যায়।"
+              : "Example: 0.03 Acre can be converted to Katha using the calculator above."}
+          </li>
+        </ul>
+
         <h2>
           {bn
             ? "জমির ক্ষেত্রফল রূপান্তর টেবিল"
@@ -942,6 +965,25 @@ export default function LandAreaCalculatorClient() {
           line-height: 1.72;
         }
 
+        .quickConversions {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+          margin: 18px 0 4px;
+          padding: 0;
+          list-style: none;
+        }
+
+        .quickConversions li {
+          padding: 14px 16px;
+          border: 1px solid var(--line);
+          border-left: 3px solid var(--cyan);
+          border-radius: 11px;
+          color: #34405f;
+          background: #f8fcfd;
+          line-height: 1.55;
+        }
+
         .formulaList {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1104,6 +1146,10 @@ export default function LandAreaCalculatorClient() {
           }
 
           .formulaList {
+            grid-template-columns: 1fr;
+          }
+
+          .quickConversions {
             grid-template-columns: 1fr;
           }
 
