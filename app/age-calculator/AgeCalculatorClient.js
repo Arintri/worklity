@@ -114,8 +114,8 @@ export default function AgeCalculatorClient() {
 
         <p>
           {bn
-            ? "জন্মতারিখ থেকে আপনার সঠিক বয়স বছর, মাস ও দিনে হিসাব করুন।"
-            : "Calculate exact age in years, months and days from a date of birth."}
+            ? "জন্মতারিখ লিখে বছর, মাস ও দিনে সঠিক বয়স হিসাব করুন। এই ক্যালকুলেটর মোট অতিবাহিত দিন, পরবর্তী জন্মদিন এবং নির্বাচিত তারিখে বয়সও দেখায়।"
+            : "Enter a date of birth to calculate exact age in years, months and days. This age calculator also shows total elapsed days and the next birthday, and can calculate age from date of birth on a selected date."}
         </p>
       </section>
 
@@ -332,11 +332,11 @@ export default function AgeCalculatorClient() {
 
         <h2 className="infoDivider ageFaqTitle">{bn ? "সাধারণ প্রশ্ন" : "Frequently Asked Questions"}</h2>
 
-        <h3>{bn ? "বয়স কীভাবে হিসাব করা হয়?" : "How is age calculated?"}</h3>
+        <h3>{bn ? "সঠিক বয়স কীভাবে হিসাব করা হয়?" : "How does the exact age calculator work?"}</h3>
         <p>
           {bn
-            ? "জন্মতারিখ ও লক্ষ্য তারিখের মধ্যে সম্পূর্ণ ক্যালেন্ডার বছর, মাস এবং অবশিষ্ট দিন হিসাব করা হয়।"
-            : "Age is calculated as completed calendar years and months plus the remaining days between the two dates."}
+            ? "জন্মতারিখ ও লক্ষ্য তারিখের পার্থক্য থেকে সম্পূর্ণ ক্যালেন্ডার বছর, মাস এবং অবশিষ্ট দিন হিসাব করা হয়।"
+            : "It calculates the date difference as completed calendar years and months plus the remaining days between the birth date and target date."}
         </p>
 
         <h3>
@@ -361,11 +361,11 @@ export default function AgeCalculatorClient() {
             : "For this calculator, February 28 is treated as the birthday in that year."}
         </p>
 
-        <h3>{bn ? "মোট দিন বলতে কী বোঝায়?" : "What does Total Days mean?"}</h3>
+        <h3>{bn ? "মোট দিন ও পরবর্তী জন্মদিন বলতে কী বোঝায়?" : "What do Total Days and Next Birthday mean?"}</h3>
         <p>
           {bn
-            ? "এটি জন্মতারিখ থেকে লক্ষ্য তারিখ পর্যন্ত সম্পূর্ণ অতিবাহিত ক্যালেন্ডার দিনের সংখ্যা।"
-            : "It is the number of complete calendar days elapsed from the birth date to the target date."}
+            ? "মোট দিন হলো জন্মতারিখ থেকে লক্ষ্য তারিখ পর্যন্ত অতিবাহিত ক্যালেন্ডার দিনের সংখ্যা। পরবর্তী জন্মদিন হলো লক্ষ্য তারিখে বা তার পরে আসা জন্মদিন।"
+            : "Total Days is the number of calendar days elapsed from the birth date to the target date. Next Birthday is the birthday on or after that target date."}
         </p>
 
         <h3>
