@@ -1,24 +1,24 @@
 import VaccinationCalculatorClient from "./VaccinationCalculatorClient";
 
 export const metadata = {
-  title: "Vaccination Due Date Calculator India - Child Vaccine Schedule",
+  title: "Vaccine Due Date Calculator - India Vaccination Schedule",
   description:
-    "Calculate a child's vaccination due dates from date of birth using the India immunization schedule, record actual vaccine dates, and print a personal vaccination plan.",
+    "Use this vaccine due date calculator to estimate baby vaccination dates and the next vaccine due date from a child's date of birth using the vaccination schedule in India.",
   alternates: {
     canonical: "/vaccination-calculator",
   },
   openGraph: {
     type: "website",
     siteName: "Worklity",
-    title: "Vaccination Due Date Calculator India - Child Vaccine Schedule",
+    title: "Vaccine Due Date Calculator - India Vaccination Schedule",
     description:
-      "Calculate a child's vaccination due dates from date of birth using the India immunization schedule, record actual vaccine dates, and print a personal vaccination plan.",
+      "Use this vaccine due date calculator to estimate baby vaccination dates and the next vaccine due date from a child's date of birth using the vaccination schedule in India.",
     url: "/vaccination-calculator",
   },
   twitter: {
-    title: "Vaccination Due Date Calculator India - Child Vaccine Schedule",
+    title: "Vaccine Due Date Calculator - India Vaccination Schedule",
     description:
-      "Calculate a child's vaccination due dates from date of birth using the India immunization schedule, record actual vaccine dates, and print a personal vaccination plan.",
+      "Use this vaccine due date calculator to estimate baby vaccination dates and the next vaccine due date from a child's date of birth using the vaccination schedule in India.",
   },
 };
 
