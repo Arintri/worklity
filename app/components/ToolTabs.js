@@ -20,6 +20,13 @@ const TOOLS = [
     descriptionBn: "জমির হিসাব",
   },
   {
+    href: "/length-distance-converter",
+    en: "Length",
+    bn: "দৈর্ঘ্য",
+    descriptionEn: "Convert distance",
+    descriptionBn: "দূরত্ব রূপান্তর",
+  },
+  {
     href: "/age-calculator",
     en: "Age",
     bn: "বয়স",

@@ -13,6 +13,11 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/length-distance-converter`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/percentage-calculator`,
       changeFrequency: "monthly",
       priority: 0.9,
