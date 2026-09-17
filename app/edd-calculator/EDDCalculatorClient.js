@@ -147,8 +147,8 @@ export default function EDDCalculatorClient() {
         </h1>
         <p>
           {bn
-            ? "শেষ মাসিকের প্রথম দিন লিখে আনুমানিক প্রসবের তারিখ ও বর্তমান গর্ভাবস্থার সময়রেখা দেখুন।"
-            : "Enter the first day of your last menstrual period (LMP) to estimate your due date and current pregnancy timeline."}
+            ? "এই EDD ক্যালকুলেটরে শেষ মাসিকের (LMP) প্রথম দিন থেকে সম্ভাব্য প্রসবের তারিখ ও গর্ভকাল দেখুন। এই হিসাব শুধু পরিকল্পনা ও তথ্যের জন্য; ক্লিনিক্যাল তারিখ আলাদা হতে পারে এবং প্রযোজ্য ক্ষেত্রে স্বাস্থ্যসেবা প্রদানকারীর পরামর্শ অনুসরণ করা উচিত।"
+            : "Use this EDD calculator to estimate the expected date of delivery from the first day of your last menstrual period (LMP). The pregnancy due date calculator also shows gestational age. This LMP due date is for planning and reference only; clinical dating may differ and should follow healthcare-provider guidance when applicable."}
         </p>
       </section>
 
@@ -422,13 +422,13 @@ export default function EDDCalculatorClient() {
         <article className="faqArticle">
           <h2>{bn ? "সাধারণ প্রশ্ন" : "Frequently Asked Questions"}</h2>
 
-          <h3>{bn ? "কোন তারিখটি লিখব?" : "Which date should I enter?"}</h3>
-          <p>{bn ? "শেষ মাসিক যেদিন শুরু হয়েছিল সেই প্রথম দিনটি লিখুন।" : "Enter the first day your last menstrual period started."}</p>
+          <h3>{bn ? "EDD কী এবং কোন LMP তারিখটি লিখব?" : "What is EDD, and which LMP date should I enter?"}</h3>
+          <p>{bn ? "EDD হলো সম্ভাব্য প্রসবের তারিখ। শেষ মাসিক যেদিন শুরু হয়েছিল সেই প্রথম দিনটি লিখুন।" : "EDD means expected date of delivery. Enter the first day your last menstrual period started."}</p>
 
           <h3>{bn ? "তারিখটি কি নিশ্চিত প্রসবের দিন?" : "Is the result a guaranteed delivery date?"}</h3>
           <p>{bn ? "না। এটি LMP-ভিত্তিক আনুমানিক তারিখ; প্রকৃত প্রসবের দিন আলাদা হতে পারে।" : "No. It is an LMP-based estimate, and the actual delivery date may be different."}</p>
 
-          <h3>{bn ? "আল্ট্রাসাউন্ডের তারিখ আলাদা কেন হতে পারে?" : "Why might ultrasound dating be different?"}</h3>
+          <h3>{bn ? "ক্লিনিক্যাল বা আল্ট্রাসাউন্ডের তারিখ আলাদা কেন হতে পারে?" : "Why might clinical or ultrasound dating be different?"}</h3>
           <p>{bn ? "LMP অনিশ্চিত, মাসিক অনিয়মিত বা ডিম্বস্ফোটনের সময় ভিন্ন হলে হিসাব আলাদা হতে পারে।" : "The estimate may differ when the LMP is uncertain, cycles are irregular, or ovulation timing varies."}</p>
 
           <h3>{bn ? "IVF-এর জন্য কি এই ক্যালকুলেটর ব্যবহার করা যাবে?" : "Can I use this for IVF dating?"}</h3>
