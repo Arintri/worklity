@@ -386,6 +386,13 @@ Do not:
 - mix unrelated refactors with focused work
 - change AdSense during review without a concrete reason
 
+### Bing Webmaster Tools and IndexNow
+- Bing Webmaster Tools is configured for `worklity.in`.
+- The Worklity sitemap has been submitted and processed successfully.
+- A lightweight IndexNow integration is available for newly added, updated or deleted URLs.
+- Use IndexNow only when a URL genuinely changes; do not submit the full sitemap on every deployment.
+- IndexNow notifies participating search engines about URL changes but does not guarantee indexing.
+
 ## 15. Immediate Next Steps
 1. Keep current SEO pages unchanged for an observation period.
 2. Monitor Search Console and AdSense.
