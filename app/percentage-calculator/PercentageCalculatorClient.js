@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ToolTabs from "../components/ToolTabs";
 import TrustLinks from "../components/TrustLinks";
+import RelatedGuideLink from "../components/RelatedGuideLink";
 
 const fmt = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -479,6 +480,14 @@ export default function PercentageCalculatorClient() {
             : "Percentage points show the direct difference between two percentage rates. Percentage change shows the relative change from the original rate."}
         </p>
       </section>
+      <RelatedGuideLink
+        language={lang}
+        href="/guides/percentage-calculation-guide"
+        title={bn ? "শতাংশ হিসাবের গাইড" : "Percentage Calculation Guide"}
+        description={bn
+          ? "শতাংশের সূত্র, বৃদ্ধি-হ্রাস, পার্সেন্টেজ পয়েন্ট এবং বাস্তব উদাহরণ সহজভাবে দেখুন।"
+          : "Explore percentage formulas, increases and decreases, percentage points, and practical worked examples."}
+      />
       <TrustLinks language={lang} />
     </main>
   );

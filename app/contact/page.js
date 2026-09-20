@@ -53,6 +53,15 @@ export default function ContactPage() {
         </p>
 
         <p>
+          Please report calculation errors, outdated information, broken links,
+          or factual corrections. Include the page address, the values or text
+          involved, what you expected to see, and a reliable reference when one
+          is relevant. Worklity reviews correction reports before updating a
+          tool or guide; our approach is explained in the{" "}
+          <Link href="/editorial-policy">Editorial &amp; Calculation Policy</Link>.
+        </p>
+
+        <p>
           <b>Email:</b>{" "}
           <a href="mailto:worklity.contact@gmail.com">
             worklity.contact@gmail.com
@@ -89,7 +98,7 @@ export default function ContactPage() {
         </p>
       </section>
 
-      <footer>Worklity · Simple Tools. Smarter Work.</footer>
+      <footer>Worklity · Simple Tools. Smarter Work. · <Link href="/editorial-policy">Editorial Policy</Link></footer>
     </main>
   );
 }

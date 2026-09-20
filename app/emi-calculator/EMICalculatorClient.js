@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ToolTabs from "../components/ToolTabs";
 import TrustLinks from "../components/TrustLinks";
+import RelatedGuideLink from "../components/RelatedGuideLink";
 
 import {
   MAX_ANNUAL_INTEREST_RATE,
@@ -511,6 +512,15 @@ export default function EMICalculatorClient() {
           </p>
         </article>
 
+        <article className="wideArticle">
+          <h2>{bn ? "সহজ EMI উদাহরণ" : "A Simple EMI Example"}</h2>
+          <p>
+            {bn
+              ? "₹১,০০,০০০ ঋণ, বার্ষিক ১২% সুদ এবং ১২ মাস মেয়াদে এই ক্যালকুলেটরের পয়সা-ভিত্তিক রাউন্ডিং অনুযায়ী নিয়মিত মাসিক EMI ₹৮,৮৮৪.৮৮। সম্পূর্ণ সূচিতে মোট সুদ ₹৬,৬১৮.৫৩ এবং মোট পরিশোধ ₹১,০৬,৬১৮.৫৩। শেষ কিস্তি বাকি মূল টাকা ঠিক শূন্য করার জন্য সামান্য সমন্বয় হতে পারে।"
+              : "For a ₹100,000 loan at 12% annual interest over 12 months, this calculator’s paise-rounding method gives a regular monthly EMI of ₹8,884.88. Across the completed schedule, total interest is ₹6,618.53 and total repayment is ₹106,618.53. The final payment may be adjusted slightly to clear the exact remaining principal."}
+          </p>
+        </article>
+
         <article className="faqArticle">
           <h2>{bn ? "সাধারণ প্রশ্ন" : "Frequently Asked Questions"}</h2>
 
@@ -550,6 +560,15 @@ export default function EMICalculatorClient() {
           </p>
         </article>
       </section>
+
+      <RelatedGuideLink
+        language={lang}
+        href="/guides/emi-calculation-guide"
+        title={bn ? "EMI হিসাবের গাইড" : "EMI Calculation Guide"}
+        description={bn
+          ? "রিডিউসিং-ব্যালান্স সূত্র, মূল টাকা ও সুদ, ঋণের মেয়াদ এবং মোট পরিশোধ উদাহরণসহ বুঝুন।"
+          : "Understand the reducing-balance formula, principal and interest, loan tenure, and total repayment with examples."}
+      />
 
       <TrustLinks language={lang} />
 

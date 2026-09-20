@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ToolTabs from "../components/ToolTabs";
 import TrustLinks from "../components/TrustLinks";
+import RelatedGuideLink from "../components/RelatedGuideLink";
 
 const factor = {
   ft: 0.3048,
@@ -560,6 +561,15 @@ export default function LandAreaCalculatorClient() {
             : "Use it for general calculations and estimates. For registration or important property matters, rely on official records and measurements from a qualified professional."}
         </p>
       </section>
+
+      <RelatedGuideLink
+        language={lang}
+        href="/guides/west-bengal-land-measurement-guide"
+        title={bn ? "পশ্চিমবঙ্গ জমির মাপের গাইড" : "West Bengal Land Measurement Guide"}
+        description={bn
+          ? "কাঠা, বিঘা, ডেসিমেল, একর ও স্কয়ার ফিটের রূপান্তর মান, উদাহরণ এবং স্থানীয় ভিন্নতা বুঝুন।"
+          : "Review Katha, Bigha, Decimal, Acre and square-foot assumptions, examples, and regional variation."}
+      />
 
       <TrustLinks language={lang} />
 

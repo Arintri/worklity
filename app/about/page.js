@@ -85,6 +85,18 @@ export default function AboutPage() {
           useful to more people.
         </p>
 
+        <h2>How Worklity creates and maintains tools</h2>
+
+        <p>
+          Worklity documents each tool from its relevant calculation method,
+          conversion rule or reference source. Important calculation behaviour
+          is tested, examples are checked against the method used by the tool,
+          and reference-based content is reviewed when guidance changes. If you
+          notice an error or outdated statement, you can report it through the{" "}
+          <Link href="/contact">Contact page</Link>. Read the full{" "}
+          <Link href="/editorial-policy">Editorial &amp; Calculation Policy</Link>.
+        </p>
+
         <h2>Practical services</h2>
 
         <p>
@@ -99,7 +111,7 @@ export default function AboutPage() {
       </section>
 
       <footer>
-        Worklity · Simple Tools. Smarter Work.
+        Worklity · Simple Tools. Smarter Work. · <Link href="/editorial-policy">Editorial Policy</Link>
       </footer>
     </main>
   );

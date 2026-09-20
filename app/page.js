@@ -180,6 +180,37 @@ export default function Home() {
     },
   ];
 
+  const guides = [
+    {
+      href: "/guides/percentage-calculation-guide",
+      en: "Percentage Calculation Guide",
+      bn: "শতাংশ হিসাবের গাইড",
+      enDesc: "Learn the formulas for percentages, changes and percentage points with clear examples.",
+      bnDesc: "সহজ উদাহরণে শতাংশ, পরিবর্তন ও পার্সেন্টেজ পয়েন্টের সূত্র বুঝুন।",
+    },
+    {
+      href: "/guides/emi-calculation-guide",
+      en: "EMI Calculation Guide",
+      bn: "EMI হিসাবের গাইড",
+      enDesc: "Understand monthly EMI, reducing-balance interest, tenure and total repayment.",
+      bnDesc: "মাসিক EMI, কমতে থাকা বকেয়ার সুদ, মেয়াদ ও মোট পরিশোধ বুঝুন।",
+    },
+    {
+      href: "/guides/west-bengal-land-measurement-guide",
+      en: "West Bengal Land Measurement Guide",
+      bn: "পশ্চিমবঙ্গ জমির মাপের গাইড",
+      enDesc: "Compare Katha, Bigha, Decimal, Acre and square feet using a stated conversion basis.",
+      bnDesc: "নির্দিষ্ট রূপান্তর মানে কাঠা, বিঘা, ডেসিমেল, একর ও স্কয়ার ফিট তুলনা করুন।",
+    },
+    {
+      href: "/guides/age-date-calculation-guide",
+      en: "Exact Age & Date Guide",
+      bn: "সঠিক বয়স ও তারিখের গাইড",
+      enDesc: "See how calendar years, months, days, leap years and birthdays are handled.",
+      bnDesc: "ক্যালেন্ডার বছর, মাস, দিন, অধিবর্ষ ও জন্মদিনের হিসাব বুঝুন।",
+    },
+  ];
+
   const services = [
     {
       en: "Excel & Google Sheets",
@@ -214,6 +245,7 @@ export default function Home() {
         <div className="headerActions">
           <nav className="homeNav" aria-label={bn ? "মূল নেভিগেশন" : "Main navigation"}>
             <a href="#tools">{bn ? "ফ্রি টুল" : "Free Tools"}</a>
+            <Link href="/guides">{bn ? "গাইড" : "Guides"}</Link>
             <a href="#services">{bn ? "সার্ভিস" : "Services"}</a>
           </nav>
 
@@ -344,6 +376,38 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="guidesSection" aria-labelledby="practical-guides">
+        <div className="sectionHeading">
+          <div>
+            <small>{bn ? "সহজ ব্যাখ্যা ও উদাহরণ" : "LEARN THE METHOD"}</small>
+            <h2 id="practical-guides">{bn ? "ব্যবহারিক গাইড" : "Practical Guides"}</h2>
+          </div>
+          <p>
+            {bn
+              ? "হিসাবের সূত্র, ধারণা ও উদাহরণ সহজভাবে পড়ুন। পূর্ণ গাইডগুলো বর্তমানে ইংরেজিতে।"
+              : "Understand the formulas, concepts and examples behind useful everyday calculations."}
+          </p>
+        </div>
+        <div className="guideGrid">
+          {guides.map((guide) => (
+            <Link className="homeGuideCard" href={guide.href} key={guide.href}>
+              <h3>{bn ? guide.bn : guide.en}</h3>
+              <p>{bn ? guide.bnDesc : guide.enDesc}</p>
+              <span>{bn ? "গাইড পড়ুন →" : "Read guide →"}</span>
+            </Link>
+          ))}
+        </div>
+        <Link className="allGuidesLink" href="/guides">
+          {bn ? "সব গাইড দেখুন →" : "View all practical guides →"}
+        </Link>
+        <p className="editorialTrust">
+          {bn ? "Worklity কীভাবে হিসাবের পদ্ধতি ও তথ্য যাচাই করে তা জানুন: " : "Learn how Worklity checks calculator methods and content: "}
+          <Link href="/editorial-policy">
+            {bn ? "সম্পাদনা ও হিসাব নীতি →" : "Editorial & Calculation Policy →"}
+          </Link>
+        </p>
+      </section>
+
       <section className="servicesSection" id="services">
         <div className="servicesIntro">
           <small>{bn ? "ডাটা ও অফিসের কাজে সহায়তা" : "DATA & OFFICE SOLUTIONS"}</small>
@@ -386,6 +450,8 @@ export default function Home() {
         </div>
 
         <nav className="footerLinks" aria-label={bn ? "ফুটার লিংক" : "Footer links"}>
+          <Link href="/guides">{bn ? "গাইড" : "Guides"}</Link>
+          <Link href="/editorial-policy">{bn ? "সম্পাদনা নীতি" : "Editorial Policy"}</Link>
           <Link href="/about">{bn ? "আমাদের সম্পর্কে" : "About"}</Link>
           <Link href="/privacy-policy">{bn ? "গোপনীয়তা নীতি" : "Privacy Policy"}</Link>
           <Link href="/disclaimer">{bn ? "দায়মুক্তি" : "Disclaimer"}</Link>
@@ -643,7 +709,8 @@ export default function Home() {
         .signalThree { bottom: 28px; left: 16px; color: var(--violet) !important; }
 
         .toolsSection,
-        .valueSection {
+        .valueSection,
+        .guidesSection {
           max-width: 1180px;
           margin: auto;
           padding: 38px 22px 50px;
@@ -807,6 +874,77 @@ export default function Home() {
           gap: 14px;
         }
 
+        .guidesSection {
+          padding-top: 30px;
+        }
+
+        .guideGrid {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 15px;
+        }
+
+        :global(.homeGuideCard) {
+          display: flex;
+          min-width: 0;
+          min-height: 220px;
+          padding: 22px;
+          flex-direction: column;
+          border: 1px solid rgba(65, 60, 125, 0.14);
+          border-radius: 18px;
+          color: var(--ink);
+          background: rgba(255, 255, 255, 0.94);
+          box-shadow: 0 12px 30px rgba(31, 39, 82, 0.07);
+          transition: transform 170ms ease, box-shadow 170ms ease, border-color 170ms ease;
+        }
+
+        :global(.homeGuideCard:hover) {
+          transform: translateY(-3px);
+          border-color: rgba(118, 86, 216, 0.3);
+          box-shadow: 0 18px 38px rgba(31, 39, 82, 0.12);
+        }
+
+        :global(.homeGuideCard h3) {
+          margin: 0 0 10px;
+          color: var(--navy);
+          font-size: 21px;
+          line-height: 1.25;
+        }
+
+        :global(.homeGuideCard p) {
+          margin: 0 0 18px;
+          color: var(--muted);
+          line-height: 1.58;
+        }
+
+        :global(.homeGuideCard span) {
+          margin-top: auto;
+          color: #6049ba;
+          font-weight: 850;
+        }
+
+        :global(.allGuidesLink) {
+          display: inline-flex;
+          min-height: 44px;
+          margin-top: 18px;
+          align-items: center;
+          color: var(--indigo);
+          font-weight: 850;
+        }
+
+        .editorialTrust {
+          margin: 18px 0 0;
+          color: var(--muted);
+          line-height: 1.6;
+        }
+
+        :global(.editorialTrust a) {
+          color: var(--indigo);
+          font-weight: 800;
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
+
         .valueCard {
           display: flex;
           min-width: 0;
@@ -958,6 +1096,9 @@ export default function Home() {
         .primaryCta:focus-visible,
         .secondaryCta:focus-visible,
         :global(.toolCard:focus-visible),
+        :global(.homeGuideCard:focus-visible),
+        :global(.allGuidesLink:focus-visible),
+        :global(.editorialTrust a:focus-visible),
         :global(.serviceCta:focus-visible),
         :global(.footerLinks a:focus-visible) {
           outline: 3px solid rgba(37, 166, 184, 0.58);
@@ -966,7 +1107,8 @@ export default function Home() {
 
         @media (max-width: 980px) {
           .toolGrid,
-          .valueGrid {
+          .valueGrid,
+          .guideGrid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
 
@@ -1033,7 +1175,8 @@ export default function Home() {
           }
 
           .toolsSection,
-          .valueSection {
+          .valueSection,
+          .guidesSection {
             padding: 38px 16px;
           }
 
@@ -1095,7 +1238,8 @@ export default function Home() {
           }
 
           .toolGrid,
-          .valueGrid {
+          .valueGrid,
+          .guideGrid {
             grid-template-columns: 1fr;
           }
 

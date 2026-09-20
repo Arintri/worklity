@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ToolTabs from "../components/ToolTabs";
 import TrustLinks from "../components/TrustLinks";
+import RelatedGuideLink from "../components/RelatedGuideLink";
 import {
   calculateAgeDetails,
   isValidDate,
@@ -390,6 +391,15 @@ export default function AgeCalculatorClient() {
             : "No. The result is informational. Official requirements should use accepted documents, official records, and the applicable rules."}
         </p>
       </section>
+
+      <RelatedGuideLink
+        language={lang}
+        href="/guides/age-date-calculation-guide"
+        title={bn ? "সঠিক বয়স ও তারিখ হিসাবের গাইড" : "Exact Age & Date Calculation Guide"}
+        description={bn
+          ? "সম্পূর্ণ বছর, মাস ও দিন, অধিবর্ষ এবং পরবর্তী জন্মদিনের হিসাব উদাহরণসহ বুঝুন।"
+          : "Understand completed years, months and days, leap years, and next-birthday calculations with worked examples."}
+      />
 
       <TrustLinks language={lang} />
 

@@ -3,6 +3,7 @@ import styles from "./TrustLinks.module.css";
 
 const LINKS = [
   { href: "/about", en: "About", bn: "আমাদের সম্পর্কে" },
+  { href: "/editorial-policy", en: "Editorial Policy", bn: "সম্পাদনা নীতি" },
   { href: "/contact", en: "Contact", bn: "যোগাযোগ" },
   { href: "/privacy-policy", en: "Privacy Policy", bn: "গোপনীয়তা নীতি" },
   { href: "/disclaimer", en: "Disclaimer", bn: "দায়মুক্তি" },
