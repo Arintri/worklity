@@ -21,7 +21,7 @@ export default function Home() {
       link: "/land-area-calculator",
       icon: "⌗",
       accent: "violet",
-      active: true,
+      collection: "local",
     },
     {
       categoryEn: "Finance",
@@ -33,7 +33,7 @@ export default function Home() {
       link: "/percentage-calculator",
       icon: "%",
       accent: "cyan",
-      active: true,
+      collection: "everyday",
     },
     {
       categoryEn: "Date & Time",
@@ -45,7 +45,7 @@ export default function Home() {
       link: "/age-calculator",
       icon: "◷",
       accent: "indigo",
-      active: true,
+      collection: "everyday",
     },
     {
       categoryEn: "Adult Health",
@@ -59,7 +59,7 @@ export default function Home() {
       link: "/bmi-calculator",
       icon: "BMI",
       accent: "cyan",
-      active: true,
+      collection: "health",
     },
     {
       categoryEn: "Liver Health",
@@ -73,7 +73,7 @@ export default function Home() {
       link: "/fib-4-calculator",
       icon: "F4",
       accent: "violet",
-      active: true,
+      collection: "health",
     },
     {
       categoryEn: "Pregnancy & Dates",
@@ -89,7 +89,7 @@ export default function Home() {
       link: "/edd-calculator",
       icon: "✦",
       accent: "violet",
-      active: true,
+      collection: "health",
     },
     {
       categoryEn: "Loans & Finance",
@@ -105,7 +105,7 @@ export default function Home() {
       link: "/emi-calculator",
       icon: "₹",
       accent: "cyan",
-      active: true,
+      collection: "everyday",
     },
     {
       categoryEn: "Child Health",
@@ -120,7 +120,7 @@ export default function Home() {
       link: "/vaccination-calculator",
       icon: "✚",
       accent: "indigo",
-      active: true,
+      collection: "local",
     },
     {
       categoryEn: "Measurement",
@@ -134,18 +134,31 @@ export default function Home() {
       link: "/length-distance-converter",
       icon: "↔",
       accent: "cyan",
-      active: true,
+      collection: "everyday",
+    },
+  ];
+
+  const toolCollections = [
+    {
+      key: "everyday",
+      en: "Everyday calculation tools",
+      bn: "দৈনন্দিন হিসাবের টুল",
+      enDesc: "For quick number, date, loan and distance calculations.",
+      bnDesc: "সংখ্যা, তারিখ, ঋণ ও দূরত্বের দ্রুত হিসাবের জন্য।",
     },
     {
-      categoryEn: "Office & Data",
-      categoryBn: "অফিস ও ডাটা",
-      en: "Office & Data Tools",
-      bn: "অফিস ও ডাটার টুল",
-      enDesc: "Helpful spreadsheet and data tools are being prepared.",
-      bnDesc: "স্প্রেডশিট ও ডাটার কাজে নতুন টুল তৈরি হচ্ছে।",
-      icon: "▦",
-      accent: "muted",
-      active: false,
+      key: "local",
+      en: "India & local planning",
+      bn: "ভারত ও স্থানীয় পরিকল্পনা",
+      enDesc: "For West Bengal land measurements and child vaccination planning in India.",
+      bnDesc: "পশ্চিমবঙ্গের জমির মাপ ও ভারতে শিশুর টিকাদান পরিকল্পনার জন্য।",
+    },
+    {
+      key: "health",
+      en: "Health awareness & planning",
+      bn: "স্বাস্থ্য সচেতনতা ও পরিকল্পনা",
+      enDesc: "Informational tools for adult health awareness, pregnancy planning and liver-risk discussion.",
+      bnDesc: "প্রাপ্তবয়স্কদের স্বাস্থ্য সচেতনতা, গর্ভকাল পরিকল্পনা ও লিভার ঝুঁকি বোঝার তথ্যভিত্তিক টুল।",
     },
   ];
 
@@ -211,29 +224,6 @@ export default function Home() {
     },
   ];
 
-  const services = [
-    {
-      en: "Excel & Google Sheets",
-      bn: "Excel ও Google Sheets",
-    },
-    {
-      en: "Data cleaning & organization",
-      bn: "ডাটা পরিষ্কার ও গুছিয়ে দেওয়া",
-    },
-    {
-      en: "Reports & dashboards",
-      bn: "রিপোর্ট ও ড্যাশবোর্ড",
-    },
-    {
-      en: "Spreadsheet automation",
-      bn: "স্প্রেডশিটের কাজ অটোমেশন",
-    },
-    {
-      en: "Custom utility & workflow solutions",
-      bn: "কাজ অনুযায়ী কাস্টম টুল ও সমাধান",
-    },
-  ];
-
   return (
     <main className="homePage">
       <header className="homeHeader">
@@ -246,7 +236,6 @@ export default function Home() {
           <nav className="homeNav" aria-label={bn ? "মূল নেভিগেশন" : "Main navigation"}>
             <a href="#tools">{bn ? "ফ্রি টুল" : "Free Tools"}</a>
             <Link href="/guides">{bn ? "গাইড" : "Guides"}</Link>
-            <a href="#services">{bn ? "সার্ভিস" : "Services"}</a>
           </nav>
 
           <div
@@ -286,8 +275,8 @@ export default function Home() {
 
           <p>
             {bn
-              ? "দৈনন্দিন হিসাব, জমির মাপ, অর্থ, বয়স ও তারিখ এবং স্বাস্থ্য সচেতনতা ও পরিকল্পনার জন্য সহজ ব্যবহারিক টুল।"
-              : "Simple practical tools for everyday calculations, measurement, finance, dates and age, and health awareness or planning."}
+              ? "দৈনন্দিন হিসাব, জমির মাপ, অর্থ, বয়স ও তারিখ এবং স্বাস্থ্য সচেতনতা ও পরিকল্পনার জন্য বাংলা ও ইংরেজিতে সহজ ব্যবহারিক টুল।"
+              : "Free practical calculators and planning tools in English and Bengali for everyday numbers, dates, measurement, finance and health awareness."}
           </p>
 
           <div className="heroActions">
@@ -318,40 +307,32 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="toolGrid">
-          {tools.map((tool) => {
-            const content = (
-              <>
-                <div className={`toolIcon ${tool.accent}`} aria-hidden="true">
-                  {tool.icon}
-                </div>
-                <span className="toolCategory">
-                  {bn ? tool.categoryBn : tool.categoryEn}
-                </span>
-                <h3>{bn ? tool.bn : tool.en}</h3>
-                <p>{bn ? tool.bnDesc : tool.enDesc}</p>
-                <span className={tool.active ? "toolAction" : "comingSoon"}>
-                  {tool.active
-                    ? bn
-                      ? tool.bnAction || "হিসাব করুন"
-                      : tool.enAction || "Calculate Now"
-                    : bn
-                    ? "শীঘ্রই আসছে"
-                    : "Coming Soon"}
-                </span>
-              </>
-            );
-
-            return tool.active ? (
-              <Link className="toolCard" href={tool.link} key={tool.en}>
-                {content}
-              </Link>
-            ) : (
-              <article className="toolCard unavailable" aria-disabled="true" key={tool.en}>
-                {content}
-              </article>
-            );
-          })}
+        <div className="toolCollections">
+          {toolCollections.map((collection) => (
+            <section className="toolCollection" aria-labelledby={`collection-${collection.key}`} key={collection.key}>
+              <div className="toolCollectionHeading">
+                <h3 id={`collection-${collection.key}`}>{bn ? collection.bn : collection.en}</h3>
+                <p>{bn ? collection.bnDesc : collection.enDesc}</p>
+              </div>
+              <div className="toolGrid">
+                {tools.filter((tool) => tool.collection === collection.key).map((tool) => (
+                  <Link className="toolCard" href={tool.link} key={tool.en}>
+                    <div className={`toolIcon ${tool.accent}`} aria-hidden="true">
+                      {tool.icon}
+                    </div>
+                    <span className="toolCategory">
+                      {bn ? tool.categoryBn : tool.categoryEn}
+                    </span>
+                    <h3>{bn ? tool.bn : tool.en}</h3>
+                    <p>{bn ? tool.bnDesc : tool.enDesc}</p>
+                    <span className="toolAction">
+                      {bn ? tool.bnAction || "হিসাব করুন" : tool.enAction || "Calculate Now"}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
       </section>
 
@@ -406,34 +387,6 @@ export default function Home() {
             {bn ? "সম্পাদনা ও হিসাব নীতি →" : "Editorial & Calculation Policy →"}
           </Link>
         </p>
-      </section>
-
-      <section className="servicesSection" id="services">
-        <div className="servicesIntro">
-          <small>{bn ? "ডাটা ও অফিসের কাজে সহায়তা" : "DATA & OFFICE SOLUTIONS"}</small>
-          <h2>
-            {bn
-              ? "কাজের জন্য দরকারি বাস্তব সমাধান"
-              : "Practical solutions for the work behind the numbers"}
-          </h2>
-          <p>
-            {bn
-              ? "স্প্রেডশিট, ডাটা ও বারবার করতে হয় এমন কাজ আরও গুছিয়ে ও সহজ করতে সহায়তা নিন।"
-              : "Get help organizing spreadsheets, improving data, and simplifying repeatable work."}
-          </p>
-          <Link className="serviceCta" href="/contact">
-            {bn ? "কাজ নিয়ে যোগাযোগ করুন →" : "Discuss Your Work →"}
-          </Link>
-        </div>
-
-        <div className="serviceList">
-          {services.map((service, index) => (
-            <div key={service.en}>
-              <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-              <strong>{bn ? service.bn : service.en}</strong>
-            </div>
-          ))}
-        </div>
       </section>
 
       <footer className="homeFooter">
@@ -640,8 +593,7 @@ export default function Home() {
         }
 
         .primaryCta,
-        .secondaryCta,
-        :global(.serviceCta) {
+        .secondaryCta {
           display: inline-flex;
           min-height: 48px;
           align-items: center;
@@ -725,15 +677,13 @@ export default function Home() {
           margin-bottom: 25px;
         }
 
-        .sectionHeading small,
-        .servicesIntro small {
+        .sectionHeading small {
           color: #6550bd;
           font-weight: 900;
           letter-spacing: 0.09em;
         }
 
-        .sectionHeading h2,
-        .servicesIntro h2 {
+        .sectionHeading h2 {
           margin: 9px 0 0;
           color: var(--navy);
           font-size: clamp(30px, 3.6vw, 44px);
@@ -746,6 +696,40 @@ export default function Home() {
           margin: 0 0 5px;
           color: var(--muted);
           line-height: 1.55;
+        }
+
+        .toolCollections {
+          display: grid;
+          gap: 34px;
+        }
+
+        .toolCollection {
+          min-width: 0;
+        }
+
+        .toolCollectionHeading {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          gap: 24px;
+          margin-bottom: 14px;
+          padding-bottom: 12px;
+          border-bottom: 1px solid #e2e5ee;
+        }
+
+        .toolCollectionHeading h3 {
+          margin: 0;
+          color: var(--navy);
+          font-size: 20px;
+          line-height: 1.25;
+        }
+
+        .toolCollectionHeading p {
+          max-width: 500px;
+          margin: 0;
+          color: var(--muted);
+          font-size: 14px;
+          line-height: 1.5;
         }
 
         .toolGrid {
@@ -770,7 +754,7 @@ export default function Home() {
           transition: transform 170ms ease, border-color 170ms ease, box-shadow 170ms ease;
         }
 
-        :global(.toolCard:not(.unavailable):hover) {
+        :global(.toolCard:hover) {
           border-color: rgba(118, 86, 216, 0.3);
           box-shadow: 0 20px 42px rgba(42, 42, 101, 0.13);
           transform: translateY(-4px);
@@ -825,8 +809,7 @@ export default function Home() {
           line-height: 1.55;
         }
 
-        .toolAction,
-        .comingSoon {
+        .toolAction {
           margin-top: auto;
           font-weight: 900;
         }
@@ -842,22 +825,6 @@ export default function Home() {
           border-radius: 10px;
           color: #6049ba;
           background: rgba(118, 86, 216, 0.075);
-        }
-
-        .comingSoon {
-          align-self: flex-start;
-          padding: 7px 10px;
-          border: 1px solid #d8dce5;
-          border-radius: 99px;
-          color: #667085;
-          background: #f3f4f7;
-          font-size: 13px;
-        }
-
-        :global(.unavailable) {
-          border-style: dashed;
-          box-shadow: none;
-          cursor: not-allowed;
         }
 
         .valueSection {
@@ -980,71 +947,6 @@ export default function Home() {
           line-height: 1.45;
         }
 
-        .servicesSection {
-          display: grid;
-          grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-          gap: 48px;
-          max-width: 1136px;
-          margin: 28px auto 72px;
-          padding: 46px;
-          border: 1px solid rgba(94, 77, 179, 0.2);
-          border-radius: 26px;
-          color: #fff;
-          background:
-            radial-gradient(circle at 90% 5%, rgba(56, 205, 208, 0.17), transparent 35%),
-            linear-gradient(135deg, #121b3d, #273471 64%, #4d3e91);
-          box-shadow: 0 24px 58px rgba(31, 36, 82, 0.18);
-          scroll-margin-top: 24px;
-        }
-
-        .servicesIntro small {
-          color: #8fe4e6;
-        }
-
-        .servicesIntro h2 {
-          color: #fff;
-        }
-
-        .servicesIntro p {
-          margin: 17px 0 24px;
-          color: rgba(239, 242, 255, 0.75);
-          font-size: 17px;
-          line-height: 1.65;
-        }
-
-        :global(.serviceCta) {
-          color: var(--navy);
-          background: #fff;
-          box-shadow: 0 10px 25px rgba(5, 10, 33, 0.2);
-        }
-
-        .serviceList {
-          display: grid;
-          align-content: center;
-          gap: 10px;
-        }
-
-        .serviceList > div {
-          display: flex;
-          min-width: 0;
-          padding: 14px 16px;
-          align-items: center;
-          gap: 14px;
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          border-radius: 12px;
-          background: rgba(255, 255, 255, 0.07);
-        }
-
-        .serviceList span {
-          color: #81d9de;
-          font-size: 12px;
-          font-weight: 900;
-        }
-
-        .serviceList strong {
-          overflow-wrap: anywhere;
-        }
-
         .homeFooter {
           display: flex;
           max-width: 1180px;
@@ -1099,7 +1001,6 @@ export default function Home() {
         :global(.homeGuideCard:focus-visible),
         :global(.allGuidesLink:focus-visible),
         :global(.editorialTrust a:focus-visible),
-        :global(.serviceCta:focus-visible),
         :global(.footerLinks a:focus-visible) {
           outline: 3px solid rgba(37, 166, 184, 0.58);
           outline-offset: 3px;
@@ -1121,10 +1022,6 @@ export default function Home() {
             height: 195px;
           }
 
-          .servicesSection {
-            margin-right: 20px;
-            margin-left: 20px;
-          }
         }
 
         @media (max-width: 720px) {
@@ -1188,11 +1085,12 @@ export default function Home() {
             margin-top: 12px;
           }
 
-          .servicesSection {
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin: 18px 14px 52px;
-            padding: 30px 23px;
+          .toolCollectionHeading {
+            display: block;
+          }
+
+          .toolCollectionHeading p {
+            margin-top: 6px;
           }
 
           .homeFooter {
@@ -1263,13 +1161,8 @@ export default function Home() {
             padding-top: 20px;
           }
 
-          .servicesIntro h2,
           .sectionHeading h2 {
             font-size: 31px;
-          }
-
-          :global(.serviceCta) {
-            width: 100%;
           }
 
           .footerLinks {
