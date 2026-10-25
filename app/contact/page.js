@@ -4,7 +4,7 @@ import Image from "next/image";
 export const metadata = {
   title: "Contact Worklity",
   description:
-    "Contact Worklity for questions, feedback, tool suggestions and practical data or spreadsheet services.",
+    "Contact Worklity for questions, feedback, tool suggestions, corrections and broken-link reports.",
   alternates: {
     canonical: "/contact",
   },
@@ -13,13 +13,13 @@ export const metadata = {
     siteName: "Worklity",
     title: "Contact Worklity",
     description:
-      "Contact Worklity for questions, feedback, tool suggestions and practical data or spreadsheet services.",
+      "Contact Worklity for questions, feedback, tool suggestions, corrections and broken-link reports.",
     url: "/contact",
   },
   twitter: {
     title: "Contact Worklity",
     description:
-      "Contact Worklity for questions, feedback, tool suggestions and practical data or spreadsheet services.",
+      "Contact Worklity for questions, feedback, tool suggestions, corrections and broken-link reports.",
   },
 };
 
@@ -68,33 +68,12 @@ export default function ContactPage() {
           </a>
         </p>
 
-        <h2>Need a practical solution?</h2>
-
-        <p>
-          Worklity also provides practical support for spreadsheet and
-          data-related work, including:
-        </p>
-
-        <ul>
-          <li>Excel and Google Sheets solutions</li>
-          <li>Data cleaning and organization</li>
-          <li>Reports and dashboards</li>
-          <li>Spreadsheet automation</li>
-          <li>Custom utility and workflow solutions</li>
-        </ul>
-
-        <p>
-          For service enquiries, send a short description of your
-          requirement by email. Please do not send passwords, OTPs,
-          banking credentials or other sensitive information.
-        </p>
-
         <h2>Response</h2>
 
         <p>
           We aim to review genuine messages as soon as reasonably
           possible. Please include a clear subject and enough information
-          for us to understand your question or requirement.
+          for us to understand your question or correction report.
         </p>
       </section>
 

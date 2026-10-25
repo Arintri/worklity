@@ -41,7 +41,7 @@ export default function AboutPage() {
 
         <p>
           Worklity is built to make common calculations and everyday
-          digital tasks simpler, faster and easier to understand.
+          planning or measurement tasks simpler, faster and easier to understand.
         </p>
       </section>
 
@@ -95,14 +95,6 @@ export default function AboutPage() {
           notice an error or outdated statement, you can report it through the{" "}
           <Link href="/contact">Contact page</Link>. Read the full{" "}
           <Link href="/editorial-policy">Editorial &amp; Calculation Policy</Link>.
-        </p>
-
-        <h2>Practical services</h2>
-
-        <p>
-          Worklity also focuses on practical data and office solutions
-          including spreadsheets, data cleaning, reports, dashboards
-          and workflow automation.
         </p>
 
         <p>

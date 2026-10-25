@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./TrustLinks.module.css";
 
 const LINKS = [
+  { href: "/guides", en: "Guides", bn: "গাইড" },
   { href: "/about", en: "About", bn: "আমাদের সম্পর্কে" },
   { href: "/editorial-policy", en: "Editorial Policy", bn: "সম্পাদনা নীতি" },
   { href: "/contact", en: "Contact", bn: "যোগাযোগ" },

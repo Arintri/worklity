@@ -4,23 +4,23 @@ import Script from "next/script";
 export const metadata = {
   metadataBase: new URL("https://worklity.in"),
   title: {
-    default: "Worklity | Simple Tools. Smarter Work.",
+    default: "Worklity | Practical Calculators & Planning Tools",
     template: "%s | Worklity",
   },
 
   description:
-    "Free practical online calculators and utility tools for everyday calculations, land and area, finance, dates, office work and data tasks.",
+    "Free practical calculators and planning tools in English and Bengali for everyday numbers, dates, measurement, finance, local planning and health awareness.",
 
   keywords: [
     "Worklity",
     "online calculator",
-    "free online tools",
-    "utility tools",
+    "practical calculators",
+    "bilingual calculators",
+    "Bengali calculator",
     "land area calculator",
     "percentage calculator",
     "age calculator",
-    "office tools",
-    "data tools",
+    "health awareness tools",
   ],
 
   authors: [{ name: "Worklity" }],
@@ -43,17 +43,17 @@ verification: {
   openGraph: {
     type: "website",
     siteName: "Worklity",
-    title: "Worklity | Simple Tools. Smarter Work.",
+    title: "Worklity | Practical Calculators & Planning Tools",
     description:
-      "Free practical online calculators and utility tools for everyday work.",
+      "Free practical calculators and planning tools in English and Bengali for everyday numbers, dates, measurement, finance, local planning and health awareness.",
     url: "/",
   },
 
   twitter: {
     card: "summary",
-    title: "Worklity | Simple Tools. Smarter Work.",
+    title: "Worklity | Practical Calculators & Planning Tools",
     description:
-      "Free practical online calculators and utility tools for everyday work.",
+      "Free practical calculators and planning tools in English and Bengali for everyday numbers, dates, measurement, finance, local planning and health awareness.",
   },
 };
 
