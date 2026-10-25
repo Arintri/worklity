@@ -1,9 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 
-export const metadata = {  other: {
-    monetag: "9f7c13952718c31a010640c706120fda",
-  },
+export const metadata = {
   metadataBase: new URL("https://worklity.in"),
   title: {
     default: "Worklity | Practical Calculators & Planning Tools",
@@ -30,6 +28,7 @@ export const metadata = {  other: {
   publisher: "Worklity",
   other: {
     "google-adsense-account": "ca-pub-3771343820567497",
+    monetag: "9f7c13952718c31a010640c706120fda",
   },
 
   robots: {
